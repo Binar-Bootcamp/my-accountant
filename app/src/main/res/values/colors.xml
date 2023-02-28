@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- System design color. -->
+    <color name="anti_flash_white">#ffffff</color>
+    <color name="university_red">#C80000</color>
+    <color name="blue">#005ECD</color>
+    <color name="raisin_black">#212121</color>
+    <color name="light_gray">#D4D4D4</color>
+    <color name="la_salle_green">#00822C</color>
+    <color name="dark_pastel_green">#00C844</color>
+    <color name="ferrari_red">#EF2206</color>
+    <color name="malachite">#06DB41</color>
+    <color name="american_yellow">#EFAE06</color>
 </resources>

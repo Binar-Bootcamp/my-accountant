@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/finance_fragment"
+        android:icon="@drawable/finance_chart_outlined_24"
+        android:title="Finance"/>
+    <item
+        android:id="@+id/services_fragment"
+        android:icon="@drawable/layout_services_outlined_24"
+        android:title="Services"/>
+    <item
+        android:id="@+id/history_fragment"
+        android:icon="@drawable/activity_outlined_24"
+        android:title="History"/>
+    <item
+        android:id="@+id/profile_fragment"
+        android:icon="@drawable/profile_outlined_24"
+        android:title="Profile"/>
+</menu>
