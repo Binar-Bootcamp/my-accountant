@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/finance_fragment">
+
+    <fragment
+        android:id="@+id/finance_fragment"
+        android:name="com.binaracademy.myaccountant.ui.finance.FinanceFragment"
+        android:label="fragment_finance" />
+    <fragment
+        android:id="@+id/services_fragment"
+        android:name="com.binaracademy.myaccountant.ui.services.ServicesFragment"
+        android:label="fragment_service" />
+    <fragment
+        android:id="@+id/history_fragment"
+        android:name="com.binaracademy.myaccountant.ui.history.HistoryFragment"
+        android:label="fragment_history" />
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.binaracademy.myaccountant.ui.profile.ProfileFragment"
+        android:label="fragment_profile" />
+</navigation>
