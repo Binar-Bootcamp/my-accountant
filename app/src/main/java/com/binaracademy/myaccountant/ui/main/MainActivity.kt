@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.binaracademy.myaccountant.databinding.ActivityMainBinding
 
@@ -15,14 +16,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
-        if(supportActionBar != null)
-        {
-            supportActionBar!!.hide()
-        }
 
         val navHostFragment = binding.containerFragment.getFragment<NavHostFragment>()
         navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
+
+        binding.toolbar.setupWithNavController(navController)
+
+
     }
 }

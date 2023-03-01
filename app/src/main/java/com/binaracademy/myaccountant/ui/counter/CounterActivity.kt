@@ -18,10 +18,10 @@ class CounterActivity : AppCompatActivity() {
         binding = ActivityCounterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if(supportActionBar != null)
-        {
-            supportActionBar!!.hide()
-        }
+//        if(supportActionBar != null)
+//        {
+//            supportActionBar!!.hide()
+//        }
 
             binding.rvOne.layoutManager = LinearLayoutManager(this)
             binding.rvOne.adapter = lisAdapter
