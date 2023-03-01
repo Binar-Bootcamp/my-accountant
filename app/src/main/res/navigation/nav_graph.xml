@@ -12,7 +12,11 @@
     <fragment
         android:id="@+id/services_fragment"
         android:name="com.binaracademy.myaccountant.ui.services.ServicesFragment"
-        android:label="fragment_service" />
+        android:label="fragment_service" >
+        <action
+            android:id="@+id/action_services_fragment_to_counterFragment"
+            app:destination="@id/counterFragment" />
+    </fragment>
     <fragment
         android:id="@+id/history_fragment"
         android:name="com.binaracademy.myaccountant.ui.history.HistoryFragment"
@@ -21,4 +25,14 @@
         android:id="@+id/profile_fragment"
         android:name="com.binaracademy.myaccountant.ui.profile.ProfileFragment"
         android:label="fragment_profile" />
+    <fragment
+        android:id="@+id/counterFragment"
+        android:name="com.binaracademy.myaccountant.ui.counter.CounterFragment"
+        android:label="fragment_counter"
+        tools:layout="@layout/fragment_counter" >
+
+        <action
+            android:id="@+id/action_counterFragment_self"
+            app:destination="@id/counterFragment" />
+    </fragment>
 </navigation>

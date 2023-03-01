@@ -16,6 +16,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        if(supportActionBar != null)
+        {
+            supportActionBar!!.hide()
+        }
+
         val navHostFragment = binding.containerFragment.getFragment<NavHostFragment>()
         navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
