@@ -8,32 +8,31 @@
     <fragment
         android:id="@+id/finance_fragment"
         android:name="com.binaracademy.myaccountant.ui.finance.FinanceFragment"
-        android:label="Finance" />
+        android:label="Finance" >
+        <action
+            android:id="@+id/action_finance_fragment_to_services_fragment"
+            app:destination="@id/services_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/services_fragment"
         android:name="com.binaracademy.myaccountant.ui.services.ServicesFragment"
         android:label="Service" >
+
         <action
-            android:id="@+id/action_services_fragment_to_counterFragment"
-            app:destination="@id/counterFragment" />
+            android:id="@+id/action_services_fragment_to_history_fragment"
+            app:destination="@id/history_fragment" />
     </fragment>
     <fragment
         android:id="@+id/history_fragment"
         android:name="com.binaracademy.myaccountant.ui.history.HistoryFragment"
         android:label="History"
-        />
+        >
+        <action
+            android:id="@+id/action_history_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+    </fragment>
     <fragment
         android:id="@+id/profile_fragment"
         android:name="com.binaracademy.myaccountant.ui.profile.ProfileFragment"
         android:label="Profile" />
-    <fragment
-        android:id="@+id/counterFragment"
-        android:name="com.binaracademy.myaccountant.ui.counter.CounterFragment"
-        android:label="Counter"
-        tools:layout="@layout/fragment_counter" >
-
-        <action
-            android:id="@+id/action_counterFragment_self"
-            app:destination="@id/counterFragment" />
-    </fragment>
 </navigation>

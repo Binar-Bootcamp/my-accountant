@@ -39,6 +39,9 @@ class ServicesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
+
         binding.cvCounter.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, CounterActivity::class.java)
