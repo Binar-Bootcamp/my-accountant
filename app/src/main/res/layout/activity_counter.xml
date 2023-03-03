@@ -24,6 +24,7 @@
         app:titleTextColor="@color/black" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -37,12 +38,11 @@
             android:textColor="@color/black"
             android:textSize="18sp" />
 
+
         <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="0dp"
+            android:id="@+id/mySpinner"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:minHeight="25dp"
             android:spinnerMode="dialog" />
     </LinearLayout>
 

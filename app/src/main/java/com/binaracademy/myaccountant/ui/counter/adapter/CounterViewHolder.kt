@@ -10,6 +10,7 @@ class CounterViewHolder(private val binding: CounterChildBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(item: CounterData) {
         binding.textViewTitle.text = item.nama
-        Glide.with(binding.root.context).load(item.url).into(binding.imageView)
+        binding.imageCounter?.let { Glide.with(binding.root.context).load(item.url).into(it) }
+        binding.textLocation.text = item.location
     }
 }

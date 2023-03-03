@@ -21,4 +21,6 @@
     <string name="tv_laundry">Laundry</string>
     <string name="tv_counter">Counter</string>
     <string name="tv_nearest_counter">Nearest Counter</string>
+    <string name="nama_counter">nama toko</string>
+    <string name="counter_location">location</string>
 </resources>
