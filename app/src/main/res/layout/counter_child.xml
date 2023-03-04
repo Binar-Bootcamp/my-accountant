@@ -38,7 +38,9 @@
                 android:textColor="#000000"
                 android:textColorHint="#212121"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"/>
 
             <TextView
                 android:id="@+id/text_location"

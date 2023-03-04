@@ -47,9 +47,6 @@
     </LinearLayout>
 
 
-
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_one"
         android:layout_width="match_parent"
