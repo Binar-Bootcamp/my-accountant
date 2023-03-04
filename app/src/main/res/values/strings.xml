@@ -6,4 +6,10 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Masukkan Nama</string>
+    <string-array name="type_saving">
+        <item>Si Life Balance</item>
+        <item>Si Hemat</item>
+        <item>Si Shopping</item>
+    </string-array>
 </resources>
