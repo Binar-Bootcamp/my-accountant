@@ -10,8 +10,10 @@ import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.binaracademy.myaccountant.R
+
 import com.binaracademy.myaccountant.databinding.ActivityMainBinding
 import kotlin.math.log
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
