@@ -12,4 +12,7 @@
         <item>Si Hemat</item>
         <item>Si Shopping</item>
     </string-array>
+    <string name="tv_resto">Resto</string>
+    <string name="tv_laundry">Laundry</string>
+    <string name="tv_counter">Counter</string>
 </resources>
