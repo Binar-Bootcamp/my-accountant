@@ -9,4 +9,19 @@
     <string name="tv_resto">Resto</string>
     <string name="tv_laundry">Laundry</string>
     <string name="tv_counter">Counter</string>
+    <string name="finance">Finance</string>
+    <string name="services">Services</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="icon_arrow_down">Icon Arrow Down</string>
+    <string name="desember_2023">Desember, 2023</string>
+    <string name="income">Income</string>
+    <string name="icon_wallet">Icon Wallet</string>
+    <string name="rp">Rp </string>
+    <string name="_4_600_000">4.600.000</string>
+    <string name="expense">Expense</string>
+    <string name="rp_1_670_000">Rp.1.670.000</string>
+    <string name="budget">Budget</string>
+    <string name="total">Total</string>
+    <string name="card">Card</string>
 </resources>
