@@ -20,6 +20,7 @@ class SplashScreenActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             val i = Intent(this, LandingActivity::class.java)
             startActivity(i)
+            finish()
         },2000)
     }
 }
