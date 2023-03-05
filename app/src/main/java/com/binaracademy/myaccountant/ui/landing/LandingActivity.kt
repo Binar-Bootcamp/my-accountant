@@ -2,6 +2,7 @@ package com.binaracademy.myaccountant.ui.landing
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.binaracademy.myaccountant.data.adapter.LandingPagerAdapter
 import com.binaracademy.myaccountant.databinding.ActivityLandingBinding
 
 class LandingActivity : AppCompatActivity() {

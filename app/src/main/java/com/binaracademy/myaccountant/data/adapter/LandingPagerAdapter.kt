@@ -1,4 +1,4 @@
-package com.binaracademy.myaccountant.ui.landing
+package com.binaracademy.myaccountant.data.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
