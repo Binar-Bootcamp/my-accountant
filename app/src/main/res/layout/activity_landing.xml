@@ -6,11 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".ui.landing.LandingActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffff"/>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_landing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dot_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginBottom="100dp"
+        app:dotsColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="@+id/vp_landing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/btn_vp_next"
+        android:layout_width="335dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="21dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dot_indicator" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
