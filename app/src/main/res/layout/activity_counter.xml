@@ -9,6 +9,7 @@
 
 
     <androidx.appcompat.widget.Toolbar
+        android:theme="@style/ToolbarTheme"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,16 +34,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins"
+            android:fontFamily="@font/fontbold"
             android:text="@string/tv_nearest_counter"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="14sp" />
 
 
         <Spinner
             android:id="@+id/mySpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:entries="@array/spinner_item"
+            android:label="@string/pilih_harga"
             android:spinnerMode="dialog" />
     </LinearLayout>
 
@@ -50,7 +53,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_one"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/counter_child" />
 
 
 </LinearLayout>

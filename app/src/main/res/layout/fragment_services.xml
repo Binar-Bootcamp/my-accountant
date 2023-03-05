@@ -4,9 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp">
+    android:paddingBottom="16dp">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp"
+        android:theme="@style/ToolbarTheme"
+        app:title="Services"
+        app:titleTextColor="@color/black" />
 
 
     <androidx.cardview.widget.CardView
@@ -14,11 +22,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:layout_marginTop="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        >
+        app:cardMaxElevation="12dp">
 
         <ImageView
             android:id="@+id/img_laundry"
@@ -37,6 +45,7 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/fontbold"
             android:text="@string/tv_laundry"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -49,11 +58,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:clickable="true"
+        android:focusable="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        android:focusable="true">
+        app:cardMaxElevation="12dp">
 
         <ImageView
             android:id="@+id/img_resto"
@@ -71,6 +80,7 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/fontbold"
             android:text="@string/tv_resto"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -83,11 +93,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:clickable="true"
+        android:focusable="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
-        app:cardMaxElevation="12dp"
-        android:focusable="true">
+        app:cardMaxElevation="12dp">
 
         <ImageView
             android:id="@+id/img_counter"
@@ -105,12 +115,12 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/fontbold"
             android:text="@string/tv_counter"
+            android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
 
 
     </androidx.cardview.widget.CardView>
-
 
 
 </LinearLayout>
