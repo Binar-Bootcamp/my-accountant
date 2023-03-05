@@ -11,6 +11,8 @@
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:elevation">0dp</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -96,6 +98,8 @@
     </style>
 
     <style name="Theme.MyAccountant.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:elevation">0dp</item>
     </style>
 
     <style name="RoundedSquare">
