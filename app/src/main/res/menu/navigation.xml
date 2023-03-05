@@ -3,17 +3,17 @@
     <item
         android:id="@+id/finance_fragment"
         android:icon="@drawable/finance_chart_outlined_24"
-        android:title="Finance"/>
+        android:title="@string/finance"/>
     <item
         android:id="@+id/services_fragment"
         android:icon="@drawable/layout_services_outlined_24"
-        android:title="Services"/>
+        android:title="@string/services"/>
     <item
         android:id="@+id/history_fragment"
         android:icon="@drawable/activity_outlined_24"
-        android:title="History"/>
+        android:title="@string/history"/>
     <item
         android:id="@+id/profile_fragment"
         android:icon="@drawable/profile_outlined_24"
-        android:title="Profile"/>
+        android:title="@string/profile"/>
 </menu>
