@@ -2,10 +2,8 @@ package com.binaracademy.myaccountant.ui.counter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.binaracademy.myaccountant.data.CounterData
-import com.binaracademy.myaccountant.data.CounterObject
+import com.binaracademy.myaccountant.data.model.CounterObject
 import com.binaracademy.myaccountant.databinding.ActivityCounterBinding
 import com.binaracademy.myaccountant.ui.counter.adapter.CounterAdapter
 

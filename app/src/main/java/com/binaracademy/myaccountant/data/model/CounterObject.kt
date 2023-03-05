@@ -1,4 +1,4 @@
-package com.binaracademy.myaccountant.data
+package com.binaracademy.myaccountant.data.model
 
 object CounterObject {
 

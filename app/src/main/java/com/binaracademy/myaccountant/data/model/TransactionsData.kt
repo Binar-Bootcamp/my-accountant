@@ -1,4 +1,4 @@
-package com.binaracademy.myaccountant.data
+package com.binaracademy.myaccountant.data.model
 
 import com.binaracademy.myaccountant.R
 
