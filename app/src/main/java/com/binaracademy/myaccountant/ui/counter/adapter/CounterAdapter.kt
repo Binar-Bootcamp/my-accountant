@@ -1,15 +1,27 @@
 package com.binaracademy.myaccountant.ui.counter.adapter
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Filter
+import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.data.CounterData
 import com.binaracademy.myaccountant.databinding.CounterChildBinding
+import com.binaracademy.myaccountant.ui.counter.FilterItem
 
 class CounterAdapter : RecyclerView.Adapter<CounterViewHolder>() {
-    private val items: MutableList<CounterData> = mutableListOf()
+    var items: MutableList<CounterData> = mutableListOf()
+    private lateinit var filterList :ArrayList<CounterData>
+    private var filter: FilterItem? = null
+    private lateinit var context: Context
 
+
+
+
+    @SuppressLint("NotifyDataSetChanged")
     fun addItems(newItems: List<CounterData>) {
         items.addAll(newItems)
         notifyDataSetChanged()
@@ -32,4 +44,6 @@ class CounterAdapter : RecyclerView.Adapter<CounterViewHolder>() {
         val item = items[position]
         holder.bind(item)
     }
+
+
 }
