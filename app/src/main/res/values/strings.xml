@@ -33,6 +33,7 @@
     <string name="nama_counter">Nama</string>
     <string name="counter_location">Location</string>
     <string name="pilih_harga">Pilih harga</string>
+    <string name="harga">INR 56990</string>
 
     <string-array name="spinner_item">
         <item> </item>

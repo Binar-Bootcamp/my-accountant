@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="16dp">
+    android:paddingStart="10dp"
+    android:paddingEnd="10dp">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,9 +16,13 @@
         android:theme="@style/ToolbarTheme"
         app:title="Services"
         app:titleTextColor="@color/black" />
-
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="8dp"/>
+      
 
     <androidx.cardview.widget.CardView
+        android:layout_marginEnd="30dp"
         android:id="@+id/cv_laundry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,8 +30,9 @@
         android:layout_marginTop="16dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp">
+        app:cardElevation="8dp"
+       android:paddingBottom="100dp"
+        app:cardMaxElevation="6dp">
 
         <ImageView
             android:id="@+id/img_laundry"
@@ -51,6 +57,9 @@
 
 
     </androidx.cardview.widget.CardView>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_resto"
@@ -61,8 +70,8 @@
         android:focusable="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp">
+        app:cardElevation="8dp"
+        app:cardMaxElevation="6dp">
 
         <ImageView
             android:id="@+id/img_resto"
@@ -86,6 +95,9 @@
 
 
     </androidx.cardview.widget.CardView>
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"/>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_counter"
@@ -96,8 +108,8 @@
         android:focusable="true"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        app:cardMaxElevation="12dp">
+        app:cardElevation="8dp"
+        app:cardMaxElevation="6dp">
 
         <ImageView
             android:id="@+id/img_counter"
