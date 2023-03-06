@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
-import com.binaracademy.myaccountant.data.CounterData
+import com.binaracademy.myaccountant.data.model.CounterData
 import com.binaracademy.myaccountant.databinding.CounterChildBinding
 
 class CounterAdapter : RecyclerView.Adapter<CounterViewHolder>() {
@@ -15,7 +15,6 @@ class CounterAdapter : RecyclerView.Adapter<CounterViewHolder>() {
         notifyDataSetChanged()
     }
 
-    //    var items : List<String> = emptyList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CounterViewHolder {
 
         val view =

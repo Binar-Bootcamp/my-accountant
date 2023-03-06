@@ -2,7 +2,7 @@ package com.binaracademy.myaccountant.ui.counter.adapter
 
 
 import androidx.recyclerview.widget.RecyclerView
-import com.binaracademy.myaccountant.data.CounterData
+import com.binaracademy.myaccountant.data.model.CounterData
 import com.binaracademy.myaccountant.databinding.CounterChildBinding
 import com.bumptech.glide.Glide
 

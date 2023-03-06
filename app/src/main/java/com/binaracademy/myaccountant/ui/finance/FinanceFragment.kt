@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
-import com.binaracademy.myaccountant.data.Transaction
-import com.binaracademy.myaccountant.data.TransactionsData
+import com.binaracademy.myaccountant.data.model.Transaction
+import com.binaracademy.myaccountant.data.model.TransactionsData
 import com.binaracademy.myaccountant.data.adapter.ListTransactionAdapter
 
 
