@@ -16,22 +16,22 @@
         android:theme="@style/ToolbarTheme"
         app:title="Services"
         app:titleTextColor="@color/black" />
+
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="8dp"/>
-      
+        android:layout_height="8dp" />
+
 
     <androidx.cardview.widget.CardView
-        android:layout_marginEnd="30dp"
         android:id="@+id/cv_laundry"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="30dp"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
-       android:paddingBottom="100dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
         app:cardMaxElevation="6dp">
 
         <ImageView
@@ -57,20 +57,21 @@
 
 
     </androidx.cardview.widget.CardView>
+
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="32dp"/>
+        android:layout_height="32dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_resto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
         app:cardMaxElevation="6dp">
 
         <ImageView
@@ -95,20 +96,21 @@
 
 
     </androidx.cardview.widget.CardView>
+
     <Space
         android:layout_width="wrap_content"
-        android:layout_height="32dp"/>
+        android:layout_height="32dp" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_counter"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_margin="5dp"
         android:clickable="true"
         android:focusable="true"
         app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
         app:cardMaxElevation="6dp">
 
         <ImageView
