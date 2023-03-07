@@ -29,4 +29,18 @@
     <string name="budget">Budget</string>
     <string name="total">Total</string>
     <string name="card">Card</string>
+    <string name="tv_nearest_counter">Nearest Counter</string>
+    <string name="nama_counter">Nama</string>
+    <string name="counter_location">Location</string>
+    <string name="pilih_harga">Pilih harga</string>
+    <string name="harga">INR 56990</string>
+    <string name="search">Search</string>
+    <string name="todo">TODO</string>
+
+    <string-array name="spinner_item">
+        <item> </item>
+        <item>Array Item One</item>
+        <item>Array Item Two</item>
+        <item>Array Item Three</item>
+    </string-array>
 </resources>

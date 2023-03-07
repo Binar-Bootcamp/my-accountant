@@ -17,6 +17,7 @@
         app:navGraph="@navigation/nav_graph"
         tools:layout="@layout/fragment_finance" />
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
