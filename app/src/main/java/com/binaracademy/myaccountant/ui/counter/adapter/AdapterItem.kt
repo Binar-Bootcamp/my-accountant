@@ -21,7 +21,7 @@ class AdapterItem : RecyclerView.Adapter<AdapterItem.HolderItem> , Filterable {
 	private var filter : FilterItem? = null
 	
 	constructor(context : Context , itemList : ArrayList<ModelItem>) : super() {
-		this.context = context
+		context.also { this.context = it }
 		this.itemList = itemList
 		this.filterList = itemList
 	}
@@ -41,19 +41,24 @@ class AdapterItem : RecyclerView.Adapter<AdapterItem.HolderItem> , Filterable {
 	}
 	
 	override fun onBindViewHolder(holder : HolderItem , position : Int) {
+		val currency = "IDR "
+		
 		val model = itemList[position]
 		
 		val nama = model.nama
 		val url = model.url
 		val location = model.location
-		
+		val price = model.price.toString()
 		
 		Glide.with(binding.root.context)
 			.load(url)
 			.into(holder.imgCounter)
-		
 		holder.tvNama.text = nama
 		holder.Tvloc.text = location
+		holder.tvPrice.text = buildString {
+			append(currency)
+			append(price)
+		}
 		
 		
 	}
@@ -63,10 +68,11 @@ class AdapterItem : RecyclerView.Adapter<AdapterItem.HolderItem> , Filterable {
 		var imgCounter : ImageView
 		var tvNama : TextView
 		var Tvloc : TextView
+		var tvPrice : TextView
 		
 		init {
 			binding = CounterChildBinding.bind(itemView)
-			
+			tvPrice = binding.textViewPrice
 			imgCounter = binding.imageCounter
 			tvNama = binding.textViewTitle
 			Tvloc = binding.textLocation

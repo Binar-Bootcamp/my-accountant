@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.MyAccountant" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -113,6 +113,14 @@
     <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:fontFamily">@font/fontbold</item>
     </style>
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="fontFamily">@font/poppins</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:windowBackground">@drawable/bottom_navigation_view_background</item>
+    </style>
+
+
 
 </resources>
 
