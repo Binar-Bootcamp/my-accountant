@@ -38,7 +38,7 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/appCompatImageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="286dp"
         android:src="@drawable/landing_page_one"
         android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"

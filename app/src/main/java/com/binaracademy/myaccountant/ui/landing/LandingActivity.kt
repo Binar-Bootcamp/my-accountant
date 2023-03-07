@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.binaracademy.myaccountant.data.adapter.LandingPagerAdapter
 import com.binaracademy.myaccountant.databinding.ActivityLandingBinding
 import com.binaracademy.myaccountant.ui.main.MainActivity
+import com.binaracademy.myaccountant.ui.register.RegisterActivity
 import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class LandingActivity : AppCompatActivity() {
@@ -34,7 +35,7 @@ class LandingActivity : AppCompatActivity() {
         binding.btnVpNext.setOnClickListener {
             val currentPosition = binding.vpLanding.currentItem
             if (currentPosition == landingPageAdapter.itemCount - 1) {
-                intentTo(MainActivity::class.java)
+                intentTo(RegisterActivity::class.java)
                 finish()
             } else {
                 binding.vpLanding.setCurrentItem(currentPosition +1, true)
