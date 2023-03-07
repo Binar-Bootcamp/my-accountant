@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.binaracademy.myaccountant.databinding.ActivitySplashScreenBinding
-import com.binaracademy.myaccountant.ui.landing.LandingActivity
+import com.binaracademy.myaccountant.ui.register.RegisterActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     private val binding : ActivitySplashScreenBinding by lazy {
@@ -18,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val i = Intent(this, LandingActivity::class.java)
+            val i = Intent(this, RegisterActivity::class.java)
             startActivity(i)
         },2000)
     }
