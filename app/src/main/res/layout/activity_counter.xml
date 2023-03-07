@@ -9,12 +9,12 @@
 
 
     <androidx.appcompat.widget.Toolbar
-        android:theme="@style/ToolbarTheme"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:elevation="15dp"
+        android:theme="@style/ToolbarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/container_fragment"
         app:layout_constraintBottom_toTopOf="@id/container_fragment"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,36 +24,36 @@
         app:title="Counter"
         app:titleTextColor="@color/black" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2"
-        android:orientation="horizontal"
         android:elevation="10dp"
         android:padding="5dp"
         tools:ignore="UseCompoundDrawables">
 
+
         <TextView
-            android:layout_width="315dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fontbold"
+            android:layout_alignParentStart="true"
             android:text="@string/tv_nearest_counter"
             android:textColor="@color/black"
             android:textSize="14sp" />
 
+        <ImageView
+            android:id="@+id/logo_dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="240dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_spinner_new" />
 
-            <ImageView
-                android:id="@+id/logo_dropdown"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|end"
-                android:src="@drawable/ic_spinner_new"
-                tools:ignore="RtlHardcoded"
-                android:contentDescription="@string/todo" />
 
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
