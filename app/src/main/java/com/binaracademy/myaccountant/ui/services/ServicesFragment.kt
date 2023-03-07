@@ -17,40 +17,26 @@ import com.binaracademy.myaccountant.ui.counter.CounterActivity
 class ServicesFragment : Fragment() {
     private lateinit var binding: FragmentServicesBinding
     private lateinit var button: CardView
-
-
+    
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         binding = FragmentServicesBinding.inflate(inflater, container, false)
         return binding.root
-
-
     }
 
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-//        supportActionBar?.setDisplayHomeAsUpEnabled(false)
-
-
+        
         binding.cvCounter.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, CounterActivity::class.java)
                 it.startActivity(intent)
             }
-
-
         }
-
-
     }
-
-
 }
 
 

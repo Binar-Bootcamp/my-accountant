@@ -20,7 +20,7 @@ class LandingActivity : AppCompatActivity() {
         val landingFragmentTwo = LandingPageTwoFragment()
 
         val landingPageAdapter = LandingPagerAdapter(
-            fragmentManager = supportFragmentManager,
+           this,
             landingFragmentOne, landingFragmentTwo
         )
         binding.vpLanding.adapter = landingPageAdapter
@@ -28,14 +28,16 @@ class LandingActivity : AppCompatActivity() {
         
         binding.tvSkip.setOnClickListener {
             intentTo(MainActivity::class.java)
+            finish()
         }
 
         binding.btnVpNext.setOnClickListener {
-            val currnetPosition = binding.vpLanding.currentItem
-            if (currnetPosition == landingPageAdapter.count - 1) {
+            val currentPosition = binding.vpLanding.currentItem
+            if (currentPosition == landingPageAdapter.itemCount - 1) {
                 intentTo(MainActivity::class.java)
+                finish()
             } else {
-                binding.vpLanding.setCurrentItem(currnetPosition +1, true)
+                binding.vpLanding.setCurrentItem(currentPosition +1, true)
             }
         }
     }

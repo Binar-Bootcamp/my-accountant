@@ -37,6 +37,8 @@
     <string name="search">Search</string>
     <string name="todo">TODO</string>
     <string name="next">Next</string>
+    <string name="icon_add">Icon Add</string>
+    <string name="save">Save</string>
 
     <string-array name="spinner_item">
         <item> </item>

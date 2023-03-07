@@ -106,5 +106,10 @@
     <style name="RoundedSquare">
         <item name="cornerSize">10%</item>
     </style>
+
+    <style name="TabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/fontbold</item>
+        <item name="android:textSize">10sp</item>
+    </style>
 </resources>
 
