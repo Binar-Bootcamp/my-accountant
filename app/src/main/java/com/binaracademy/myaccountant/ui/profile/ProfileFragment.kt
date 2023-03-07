@@ -20,6 +20,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ProfileFragment : Fragment() {
+
     private var _binding : FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
