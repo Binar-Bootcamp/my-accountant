@@ -1,11 +1,14 @@
 package com.binaracademy.myaccountant.ui.history
-
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.data.model.Transaction
 import com.binaracademy.myaccountant.databinding.ChildHistoryBinding
+import java.text.NumberFormat
+import java.util.*
+import kotlin.collections.ArrayList
+
 
 @Suppress("UNREACHABLE_CODE")
 class HistoryAdapter(private val listTransaction : ArrayList<Transaction>) :
@@ -24,14 +27,24 @@ class HistoryAdapter(private val listTransaction : ArrayList<Transaction>) :
 	}
 	
 	override fun onBindViewHolder(holder : HistoryViewHolder , position : Int) {
-		holder.binding.tvChildDate.text = listTransaction[position].date
-		holder.binding.tvChildAmount.text= listTransaction[position].amount.toString()
-		holder.binding.tvChildTotal.text = listTransaction[position].amount.toString()
+		val model = listTransaction[position]
+		val bulan = model.date
+		val currencyFormat : NumberFormat = NumberFormat.getCurrencyInstance(Locale("id" , "ID"))
+		holder.grandTotal.text = currencyFormat.format(model.amount)
+		holder.totall.text = currencyFormat.format(model.amount)
+		holder.bulan.text = bulan
+		
+		
+		
+		
 	}
 	
-	inner class HistoryViewHolder( val binding : ChildHistoryBinding) :
+	inner class HistoryViewHolder(val binding : ChildHistoryBinding) :
 		RecyclerView.ViewHolder(binding.root) {
-			
+		
+		var bulan : TextView = binding.tvChildDate
+		var totall : TextView = binding.tvChildTotal
+		var grandTotal : TextView = binding.tvChildAmount
 		
 	}
 }

@@ -51,6 +51,7 @@
     <string name="ex_1_250_000">Ex: 1.250.000</string>
     <string name="minimum_nominal">Minimum nominal is 100.000</string>
     <string name="your_income">Your Income</string>
+    <string name="history_total">total</string>
 
     <string-array name="spinner_item">
         <item> </item>
