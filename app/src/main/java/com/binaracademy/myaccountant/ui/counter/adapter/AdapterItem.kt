@@ -19,6 +19,7 @@ class AdapterItem : RecyclerView.Adapter<AdapterItem.HolderItem> , Filterable {
 	var itemList : ArrayList<ModelItem>
 	private var filterList : ArrayList<ModelItem>
 	private var filter : FilterItem? = null
+	
 	constructor(context : Context , itemList : ArrayList<ModelItem>) : super() {
 		context.also { this.context = it }
 		this.itemList = itemList
