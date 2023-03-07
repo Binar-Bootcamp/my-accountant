@@ -17,30 +17,31 @@
 
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MyAccountant.NoActionBar" >
-
+            android:theme="@style/Theme.MyAccountant.NoActionBar"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.landing.LandingActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MyAccountant.NoActionBar" />
 
         <activity android:name=".ui.register.RegisterActivity"
             android:exported="false"/>
 
+        <activity android:name=".ui.income.IncomeActivity"
+            android:exported="false"/>
+
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.counter.CounterActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="false" />
-
 
         <meta-data
             android:name="preloaded_fonts"

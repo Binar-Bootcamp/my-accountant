@@ -4,10 +4,44 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="register">Masukkan Nama</string>
+    <string name="skip">Skip</string>
+    <string name="save_money">Save Money</string>
+    <string name="membuat_target_menabung_sesuai_dengan_kebutuhan">Membuat target menabung sesuai dengan kebutuhan</string>
+    <string name="merekomendasikan_warung_tempat_makan_dan_laundry_sesuai_budget_mu">Merekomendasikan Warung, Tempat Makan dan Laundry sesuai budget mu</string>
+    <string name="save_money2">Save Money</string>
     <string name="tv_resto">Resto</string>
     <string name="tv_laundry">Laundry</string>
     <string name="tv_counter">Counter</string>
+    <string name="finance">Finance</string>
+    <string name="services">Services</string>
+    <string name="history">History</string>
+    <string name="profile">Profile</string>
+    <string name="icon_arrow_down">Icon Arrow Down</string>
+    <string name="desember_2023">Desember, 2023</string>
+    <string name="income">Income</string>
+    <string name="icon_wallet">Icon Wallet</string>
+    <string name="rp">Rp </string>
+    <string name="_4_600_000">4.600.000</string>
+    <string name="expense">Expense</string>
+    <string name="rp_1_670_000">Rp.1.670.000</string>
+    <string name="budget">Budget</string>
+    <string name="total">Total</string>
+    <string name="card">Card</string>
+    <string name="tv_nearest_counter">Nearest Counter</string>
+    <string name="nama_counter">Nama</string>
+    <string name="counter_location">Location</string>
+    <string name="pilih_harga">Pilih harga</string>
+    <string name="harga">INR 56990</string>
+    <string name="search">Search</string>
+    <string name="todo">TODO</string>
+    <string name="next">Next</string>
+
+    <string-array name="spinner_item">
+        <item> </item>
+        <item>Array Item One</item>
+        <item>Array Item Two</item>
+        <item>Array Item Three</item>
+    </string-array>
 </resources>

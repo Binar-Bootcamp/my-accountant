@@ -1,13 +1,15 @@
 package com.binaracademy.myaccountant.ui.splashscreen
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.databinding.ActivitySplashScreenBinding
-import com.binaracademy.myaccountant.ui.register.RegisterActivity
+import com.binaracademy.myaccountant.ui.landing.LandingActivity
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
     private val binding : ActivitySplashScreenBinding by lazy {
         ActivitySplashScreenBinding.inflate(layoutInflater)
@@ -18,8 +20,9 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val i = Intent(this, RegisterActivity::class.java)
+            val i = Intent(this, LandingActivity::class.java)
             startActivity(i)
+            finish()
         },2000)
     }
 }

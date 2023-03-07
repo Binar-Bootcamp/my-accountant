@@ -1,29 +1,105 @@
 package com.binaracademy.myaccountant.ui.counter
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.widget.SearchView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.binaracademy.myaccountant.data.CounterData
-import com.binaracademy.myaccountant.data.CounterObject
+import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.ActivityCounterBinding
-import com.binaracademy.myaccountant.ui.counter.adapter.CounterAdapter
+import com.binaracademy.myaccountant.ui.counter.adapter.AdapterItem
+import com.binaracademy.myaccountant.ui.counter.model.CounterObj
+
+
 
 class CounterActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityCounterBinding
-    private val lisAdapter = CounterAdapter()
+	private lateinit var binding : ActivityCounterBinding
+	private val getData = CounterObj.listData
+	private lateinit var adapterItem : AdapterItem
+	
+	
+	override fun onCreate(savedInstanceState : Bundle?) {
+		super.onCreate(savedInstanceState)
+		binding = ActivityCounterBinding.inflate(layoutInflater)
+		setContentView(binding.root)
+		setSupportActionBar(binding.toolbar)
+		binding.toolbar.inflateMenu(R.menu.menu_sort)
+		
+		setupRecyclerView()
+		binding.logoDropdown.setOnClickListener {
+			sortDialog()
+		}
+		
+	}
+	
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityCounterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-
-            binding.rvOne.layoutManager = LinearLayoutManager(this)
-            binding.rvOne.adapter = lisAdapter
-
-            val newItem = CounterObject.list
-            lisAdapter.addItems(newItem)
-
-    }
+	private fun sortDialog() {
+		
+		val options = arrayOf("Cheapest-Expensive" , "Expensive-Cheapest")
+		val dialog = AlertDialog.Builder(this, R.style.CustomAlertDialog)
+		dialog.setTitle("Sort By").setItems(options) { dialogInterface , i ->
+			if (i == 0) {
+				dialogInterface.dismiss()
+				sortAscending()
+				
+			} else if (i == 1) {
+				dialogInterface.dismiss()
+				sortDescending()
+			}
+			
+		}.show()
+	}
+	
+	@SuppressLint("NotifyDataSetChanged")
+	private fun sortDescending() {
+		getData.sortByDescending { it.price }
+		adapterItem.notifyDataSetChanged()
+	}
+	
+	@SuppressLint("NotifyDataSetChanged")
+	private fun sortAscending() {
+		getData.sortBy { it.price }
+		adapterItem.notifyDataSetChanged()
+	}
+	
+	override fun onCreateOptionsMenu(menu : Menu?) : Boolean {
+		
+		menuInflater.inflate(R.menu.menu_sort , menu)
+		val searchItem = menu?.findItem(R.id.action_search)
+		val searchView = searchItem?.actionView as SearchView
+		searchView.queryHint = "Search"
+		searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+			override fun onQueryTextSubmit(query : String?) : Boolean {
+				return false
+			}
+			
+			override fun onQueryTextChange(newText : String?) : Boolean {
+				adapterItem.filter.filter(newText)
+				return false
+			}
+			
+		})
+		
+		return super.onCreateOptionsMenu(menu)
+	}
+	
+	
+	override fun onSupportNavigateUp() : Boolean {
+		onBackPressedDispatcher.onBackPressed()
+		return true
+	}
+	
+	
+	private fun setupRecyclerView() {
+		val layoutManager = GridLayoutManager(this , 2)
+		binding.rvOne.layoutManager = layoutManager
+		adapterItem = AdapterItem(this , getData)
+		binding.rvOne.adapter = adapterItem
+		
+	}
+	
 }
+
+
