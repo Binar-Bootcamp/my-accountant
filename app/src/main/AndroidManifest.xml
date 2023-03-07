@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -17,7 +17,6 @@
 
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
-            android:theme="@style/Theme.MyAccountant.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,8 +26,7 @@
         </activity>
         <activity
             android:name=".ui.landing.LandingActivity"
-            android:exported="false"
-            android:theme="@style/Theme.MyAccountant.NoActionBar" />
+            android:exported="false" />
 
         <activity android:name=".ui.register.RegisterActivity"
             android:exported="false"/>
@@ -40,12 +38,12 @@
             android:name=".ui.main.MainActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.counter.CounterActivity"
+            android:name=".ui.finance.AddFinanceActivity"
             android:exported="false" />
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+        <activity
+            android:name=".ui.counter.CounterActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -16,84 +16,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="TextAppearance.AppTypographyStyles.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">64sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">40sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">32sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">24sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">20sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Body1" parent="TextAppearance.MaterialComponents.Body1">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Body2" parent="TextAppearance.MaterialComponents.Body2">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">14sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Caption" parent="TextAppearance.MaterialComponents.Caption">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">12sp</item>
-    </style>
-
-    <style name="TextAppearance.AppTypographyStyles.Overline" parent="TextAppearance.MaterialComponents.Overline">
-        <item name="fontFamily">@font/poppins</item>
-        <item name="android:fontFamily">@font/poppins</item>
-        <item name="android:textSize">10sp</item>
-    </style>
-
     <style name="Theme.MyAccountant.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowActionBar">false</item>
         <item name="android:elevation">0dp</item>
@@ -105,6 +27,16 @@
 
     <style name="RoundedSquare">
         <item name="cornerSize">10%</item>
+    </style>
+
+    <style name="TabStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">@font/fontbold</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:fontFamily">@font/fontbold</item>
+        <item name="android:textSize">10sp</item>
     </style>
 </resources>
 

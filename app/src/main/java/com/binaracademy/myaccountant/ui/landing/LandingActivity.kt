@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.binaracademy.myaccountant.data.adapter.LandingPagerAdapter
 import com.binaracademy.myaccountant.databinding.ActivityLandingBinding
 import com.binaracademy.myaccountant.ui.main.MainActivity
+import com.binaracademy.myaccountant.ui.register.RegisterActivity
 import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class LandingActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class LandingActivity : AppCompatActivity() {
         val landingFragmentTwo = LandingPageTwoFragment()
 
         val landingPageAdapter = LandingPagerAdapter(
-            fragmentManager = supportFragmentManager,
+           this,
             landingFragmentOne, landingFragmentTwo
         )
         binding.vpLanding.adapter = landingPageAdapter
@@ -28,14 +29,16 @@ class LandingActivity : AppCompatActivity() {
         
         binding.tvSkip.setOnClickListener {
             intentTo(MainActivity::class.java)
+            finish()
         }
 
         binding.btnVpNext.setOnClickListener {
-            val currnetPosition = binding.vpLanding.currentItem
-            if (currnetPosition == landingPageAdapter.count - 1) {
-                intentTo(MainActivity::class.java)
+            val currentPosition = binding.vpLanding.currentItem
+            if (currentPosition == landingPageAdapter.itemCount - 1) {
+                intentTo(RegisterActivity::class.java)
+                finish()
             } else {
-                binding.vpLanding.setCurrentItem(currnetPosition +1, true)
+                binding.vpLanding.setCurrentItem(currentPosition +1, true)
             }
         }
     }
