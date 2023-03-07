@@ -4,8 +4,8 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">Masukkan Nama</string>
     <string name="skip">Skip</string>
     <string name="save_money">Save Money</string>
     <string name="membuat_target_menabung_sesuai_dengan_kebutuhan">Membuat target menabung sesuai dengan kebutuhan</string>

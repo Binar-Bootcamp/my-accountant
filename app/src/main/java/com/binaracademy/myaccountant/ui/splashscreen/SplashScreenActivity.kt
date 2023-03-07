@@ -8,7 +8,6 @@ import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.databinding.ActivitySplashScreenBinding
 import com.binaracademy.myaccountant.ui.landing.LandingActivity
-import com.binaracademy.myaccountant.ui.main.MainActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
