@@ -4,8 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="5dp"
-    android:orientation="vertical"
     tools:context=".ui.history.HistoryFragment">
 
     <androidx.appcompat.widget.Toolbar
@@ -51,6 +49,7 @@
         android:layout_height="match_parent"
         android:layout_marginTop="24dp"
         tools:listitem="@layout/child_history" />
+
 
 
 </LinearLayout>
