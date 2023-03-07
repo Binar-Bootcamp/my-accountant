@@ -101,8 +101,10 @@
 
     <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@drawable/bottom_navigation_view_background</item>
+    </style>
 
-
+    <style name="RoundedSquare">
+        <item name="cornerSize">10%</item>
     </style>
 </resources>
 
