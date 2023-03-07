@@ -36,6 +36,7 @@
     <string name="harga">INR 56990</string>
     <string name="search">Search</string>
     <string name="todo">TODO</string>
+    <string name="next">Next</string>
 
     <string-array name="spinner_item">
         <item> </item>

@@ -4,40 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ui.landing.LandingActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ffff"/>
+    <TextView
+        android:id="@+id/tv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/fontbold"
+        android:text="@string/skip"
+        android:textColor="@color/raisin_black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_landing"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/dot_indicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_skip" />
 
-    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
         android:id="@+id/dot_indicator"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginBottom="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        app:dotsSize="10dp"
+        app:dotsSpacing="4dp"
         app:dotsColor="@color/blue"
-        app:layout_constraintBottom_toBottomOf="@+id/vp_landing"
+        app:dotsStrokeColor="@color/gray"
+        app:layout_constraintBottom_toTopOf="@+id/btn_vp_next"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_vp_next"
-        android:layout_width="335dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="29dp"
-        android:layout_marginBottom="21dp"
-        android:text="Next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/blue"
+        android:paddingVertical="20dp"
         android:fontFamily="@font/fontbold"
-        android:background="@color/blue"
+        android:text="@string/next"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        app:cornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dot_indicator" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
