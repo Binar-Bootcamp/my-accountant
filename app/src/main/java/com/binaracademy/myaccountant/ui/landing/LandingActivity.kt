@@ -4,9 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.binaracademy.myaccountant.data.adapter.LandingPagerAdapter
 import com.binaracademy.myaccountant.databinding.ActivityLandingBinding
+import com.binaracademy.myaccountant.ui.main.MainActivity
 
 class LandingActivity : AppCompatActivity() {
-    private val binding : ActivityLandingBinding by lazy{
+    private val binding: ActivityLandingBinding by lazy {
         ActivityLandingBinding.inflate(layoutInflater)
     }
 
@@ -23,5 +24,14 @@ class LandingActivity : AppCompatActivity() {
         )
         binding.vpLanding.adapter = landingPageAdapter
         binding.dotIndicator.attachTo(binding.vpLanding)
+
+        binding.btnVpNext.setOnClickListener {
+            val currnetPosition = binding.vpLanding.currentItem
+            if (currnetPosition == landingPageAdapter.count - 1) {
+                intentTo(MainActivity::class.java)
+            } else {
+                binding.vpLanding.setCurrentItem(currnetPosition +1, true)
+            }
+        }
     }
 }

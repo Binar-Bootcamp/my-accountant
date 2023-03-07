@@ -58,18 +58,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Button
-        android:id="@+id/btn_vp_next_two"
-        android:layout_width="335dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="21dp"
-        android:fontFamily="@font/fontbold"
-        android:text="Next"
-        android:background="@color/blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

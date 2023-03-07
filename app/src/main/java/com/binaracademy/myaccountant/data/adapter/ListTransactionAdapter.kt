@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
-import com.binaracademy.myaccountant.data.Transaction
+import com.binaracademy.myaccountant.data.model.Transaction
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
