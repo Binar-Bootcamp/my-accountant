@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.binaracademy.myaccountant.data.adapter.LandingPagerAdapter
 import com.binaracademy.myaccountant.databinding.ActivityLandingBinding
 import com.binaracademy.myaccountant.ui.main.MainActivity
+import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class LandingActivity : AppCompatActivity() {
     private val binding: ActivityLandingBinding by lazy {
@@ -24,6 +25,10 @@ class LandingActivity : AppCompatActivity() {
         )
         binding.vpLanding.adapter = landingPageAdapter
         binding.dotIndicator.attachTo(binding.vpLanding)
+        
+        binding.tvSkip.setOnClickListener {
+            intentTo(MainActivity::class.java)
+        }
 
         binding.btnVpNext.setOnClickListener {
             val currnetPosition = binding.vpLanding.currentItem

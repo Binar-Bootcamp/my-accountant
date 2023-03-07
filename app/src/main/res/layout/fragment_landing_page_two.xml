@@ -3,60 +3,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/tv_landing_one"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:padding="10dp"
-        android:text="Skip"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:fontFamily="@font/fontbold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/appCompatImageView"
-        android:layout_width="310dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="53dp"
-        android:src="@drawable/landing_page_two"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_landing_one" />
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="@string/save_money2"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:fontFamily="@font/fontbold"
+        android:text="@string/save_money"
+        android:textColor="@color/raisin_black"
+        android:textSize="38sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appCompatImageView" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/fontbold"
         android:gravity="center"
         android:text="@string/merekomendasikan_warung_tempat_makan_dan_laundry_sesuai_budget_mu"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:textColor="@color/gray_2"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:src="@drawable/landing_page_two"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
