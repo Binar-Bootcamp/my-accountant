@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:elevation="15dp"
-        android:theme="@style/ToolbarTheme"
         app:layout_constraintBottom_toBottomOf="@+id/container_fragment"
         app:layout_constraintBottom_toTopOf="@id/container_fragment"
         app:layout_constraintEnd_toEndOf="parent"

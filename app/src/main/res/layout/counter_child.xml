@@ -20,12 +20,12 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/image_Counter"
-                style="@style/RoundedSquare"
+
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:cropToPadding="true"
                 android:scaleType="centerCrop"
-                app:shapeAppearanceOverlay="@style/RoundedSquare" />
+                 />
 
             <TextView
                 android:id="@+id/textViewTitle"

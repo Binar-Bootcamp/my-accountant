@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:elevation="15dp"
-        android:theme="@style/ToolbarTheme"
         app:title="Services"
         app:titleTextColor="@color/black" />
 
