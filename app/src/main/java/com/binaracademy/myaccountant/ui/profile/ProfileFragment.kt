@@ -1,5 +1,6 @@
 package com.binaracademy.myaccountant.ui.profile
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,6 +30,13 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+
+        //Set name from RegisterActivity
+        val namaReceiver = arguments?.getString("username")
+        binding.tvNameProfile.text = namaReceiver
+
+
         return binding.root
 //        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
