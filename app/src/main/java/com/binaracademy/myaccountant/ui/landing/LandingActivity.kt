@@ -1,14 +1,13 @@
 package com.binaracademy.myaccountant.ui.landing
 
-import android.content.Context
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.binaracademy.myaccountant.data.adapter.LandingPagerAdapter
 import com.binaracademy.myaccountant.databinding.ActivityLandingBinding
 import com.binaracademy.myaccountant.ui.main.MainActivity
 import com.binaracademy.myaccountant.ui.register.RegisterActivity
-import com.binaracademy.myaccountant.ui.splashscreen.SplashScreenActivity
+import com.binaracademy.myaccountant.util.helpers.Global
+import com.binaracademy.myaccountant.util.helpers.SharedPreferencesManager
 import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class LandingActivity : AppCompatActivity() {
@@ -16,24 +15,18 @@ class LandingActivity : AppCompatActivity() {
 		ActivityLandingBinding.inflate(layoutInflater)
 	}
 	
-	private lateinit var sharePreference: SharedPreferences
-	private lateinit var editor: SharedPreferences.Editor
+	private lateinit var landingPageAdapter: LandingPagerAdapter
 	
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		setContentView(binding.root)
 		
-		setUpSharePreference()
+		setUpView()
 		
-		val landingFragmentOne = LandingPageOneFragment()
-		val landingFragmentTwo = LandingPageTwoFragment()
+		val appName = Global.APP_TABLE
+		val isFirst = Global.IS_FIRST
 		
-		val landingPageAdapter = LandingPagerAdapter(
-			this,
-			landingFragmentOne, landingFragmentTwo
-		)
-		binding.vpLanding.adapter = landingPageAdapter
-		binding.dotIndicator.attachTo(binding.vpLanding)
+		val sharedPreferences = SharedPreferencesManager(this, appName)
 		
 		binding.tvSkip.setOnClickListener {
 			intentTo(MainActivity::class.java)
@@ -43,7 +36,8 @@ class LandingActivity : AppCompatActivity() {
 		binding.btnVpNext.setOnClickListener {
 			val currentPosition = binding.vpLanding.currentItem
 			if (currentPosition == landingPageAdapter.itemCount - 1) {
-				setUpAction()
+				sharedPreferences.putBoolean(isFirst, false)
+				
 				intentTo(RegisterActivity::class.java)
 				finish()
 			} else {
@@ -52,14 +46,15 @@ class LandingActivity : AppCompatActivity() {
 		}
 	}
 	
-	private fun setUpSharePreference() {
-		sharePreference =
-			this.getSharedPreferences(SplashScreenActivity.TABLE_DATA, Context.MODE_PRIVATE)
-		editor = sharePreference.edit()
-	}
-	
-	private fun setUpAction() {
-		editor.putBoolean(SplashScreenActivity.IS_FIRST, false)
-		editor.apply()
+	private fun setUpView() {
+		val landingFragmentOne = LandingPageOneFragment()
+		val landingFragmentTwo = LandingPageTwoFragment()
+		
+		landingPageAdapter = LandingPagerAdapter(
+			this,
+			landingFragmentOne, landingFragmentTwo
+		)
+		binding.vpLanding.adapter = landingPageAdapter
+		binding.dotIndicator.attachTo(binding.vpLanding)
 	}
 }
