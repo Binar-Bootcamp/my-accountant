@@ -3,7 +3,6 @@ package com.binaracademy.myaccountant.util.helpers
 import android.content.Context
 import android.content.SharedPreferences
 
-
 class SharedPreferencesManager(private val context: Context, private val tableName: String) {
 	
 	private fun getSharedPreferences(): SharedPreferences {

@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.ActivityRegisterBinding
 import com.binaracademy.myaccountant.ui.income.IncomeActivity
-import com.binaracademy.myaccountant.ui.profile.ProfileFragment
+import com.binaracademy.myaccountant.util.helpers.Global
+import com.binaracademy.myaccountant.util.helpers.SharedPreferencesManager
 import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class RegisterActivity : AppCompatActivity() {
-	
 	private val binding: ActivityRegisterBinding by lazy {
 		ActivityRegisterBinding.inflate(layoutInflater)
 	}
@@ -23,19 +23,19 @@ class RegisterActivity : AppCompatActivity() {
 		val adapter = ArrayAdapter(this, R.layout.dropdown_items, items)
 		binding.savingList.setAdapter(adapter)
 		
-		val shared = getSharedPreferences("prefData", MODE_PRIVATE)
-		val editor = shared.edit()
+		val userTable = Global.USER_TABLE
+		val username = Global.USERNAME
+		val type = Global.TYPE
+		
+		val sharedPreferences = SharedPreferencesManager(this, userTable)
 		
 		binding.apply {
 			btnContinue.setOnClickListener {
 				val name = inputNama.text.toString()
 				val saving = savingList.text.toString()
 				
-				editor.apply {
-					putString("username", name)
-					putString("saving_type", saving)
-					apply()
-				}
+				sharedPreferences.putString(username, name)
+				sharedPreferences.putString(type, saving)
 				intentTo(IncomeActivity::class.java)
 			}
 		}
