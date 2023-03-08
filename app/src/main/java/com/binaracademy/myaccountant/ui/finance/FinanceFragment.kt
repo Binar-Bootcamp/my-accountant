@@ -16,10 +16,10 @@ import com.binaracademy.myaccountant.data.presenter.AllTransactionPresenter
 import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.databinding.FragmentFinanceBinding
+import com.binaracademy.myaccountant.util.helpers.NumberFormatter
 import com.binaracademy.myaccountant.util.helpers.intentTo
 import kotlinx.coroutines.launch
 import java.util.*
-
 
 class FinanceFragment : Fragment(), AllTransactionContract.View {
 	private val presenter = AllTransactionPresenter()
@@ -32,12 +32,12 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 		val calendar = Calendar.getInstance()
 		val id = "${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)}"
 		binding = FragmentFinanceBinding.inflate(inflater, container, false)
-
+		
 		presenter.setView(this)
 		lifecycleScope.launch {
 			presenter.initialFetchDataSummary(id)
 		}
-
+		
 		setUpRecycleView()
 		
 		binding.imgType.setOnClickListener {
@@ -59,7 +59,7 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 		}
 		adapter.setOnItemClickCallback(object : ListTransactionAdapter.OnItemClickCallback {
 			override fun onItemClick(data: Transaction) {
-
+			
 			}
 		})
 		recyclerView.layoutManager = layoutManager
@@ -68,19 +68,18 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 	}
 	
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+		
 		super.onViewCreated(view, savedInstanceState)
-
+		
 		binding.fabAdd.setOnClickListener {
 			binding.root.context.intentTo(AddFinanceActivity::class.java)
 		}
 	}
 	
 	override fun onUpdatedSummarySuccess(summary: Summary) {
-		binding.tvIncomeAmount.text = summary.income.toString()
-		binding.tvBudgetAmount.text = resources.getString(R.string.currency_amount, summary.budget)
-		binding.tvExpenseAmount.text =
-			resources.getString(R.string.currency_amount, summary.expense)
-		binding.tvTotalAmount.text = resources.getString(R.string.currency_amount, summary.total)
+		binding.tvIncomeAmount.text = NumberFormatter.formatRupiah(summary.income)
+		binding.tvExpenseAmount.text = NumberFormatter.formatRupiah(summary.expense)
+		binding.tvBudgetAmount.text = NumberFormatter.formatRupiah(summary.budget)
+		binding.tvTotalAmount.text = NumberFormatter.formatRupiah(summary.total)
 	}
 }
