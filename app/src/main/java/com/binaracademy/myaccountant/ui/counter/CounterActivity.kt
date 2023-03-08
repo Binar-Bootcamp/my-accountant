@@ -11,6 +11,7 @@ import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.ActivityCounterBinding
 import com.binaracademy.myaccountant.ui.counter.adapter.AdapterItem
 import com.binaracademy.myaccountant.ui.counter.model.CounterObj
+import com.binaracademy.myaccountant.util.helpers.Global
 import java.text.NumberFormat
 import java.util.*
 
@@ -22,6 +23,10 @@ class CounterActivity : AppCompatActivity() {
 	
 	
 	override fun onCreate(savedInstanceState : Bundle?) {
+		
+		val appName = Global.APP_TABLE
+		val isFirst = Global.IS_FIRST
+		
 		super.onCreate(savedInstanceState)
 		binding = ActivityCounterBinding.inflate(layoutInflater)
 		setContentView(binding.root)

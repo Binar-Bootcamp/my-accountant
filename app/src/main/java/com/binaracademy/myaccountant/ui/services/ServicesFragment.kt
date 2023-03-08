@@ -6,17 +6,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.binaracademy.myaccountant.databinding.FragmentServicesBinding
 import com.binaracademy.myaccountant.ui.counter.CounterActivity
+import com.binaracademy.myaccountant.util.helpers.Global
+
 
 
 @Suppress("UNREACHABLE_CODE")
 class ServicesFragment : Fragment() {
     private lateinit var binding: FragmentServicesBinding
-    private lateinit var button: CardView
+    
+    val appName = Global.APP_TABLE
+    val isFirst = Global.IS_FIRST
+    
+   
     
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
@@ -24,14 +28,22 @@ class ServicesFragment : Fragment() {
     ): View? {
         binding = FragmentServicesBinding.inflate(inflater, container, false)
         return binding.root
+        
     }
 
     @SuppressLint("UseRequireInsteadOfGet")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
+        
+        
+        
+       
+        
+        
         binding.cvCounter.setOnClickListener {
             activity?.let {
+                
                 val intent = Intent(it, CounterActivity::class.java)
                 it.startActivity(intent)
             }
