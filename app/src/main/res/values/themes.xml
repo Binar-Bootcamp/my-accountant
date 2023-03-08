@@ -14,6 +14,9 @@
         <item name="android:windowActionBar">false</item>
         <item name="android:elevation">0dp</item>
         <!-- Customize your theme here. -->
+
+        <item name="popupMenuBackground">@drawable/menu_background</item>
+        <item name="popupMenuStyle">@style/popupStyle</item>
     </style>
 
     <style name="Theme.MyAccountant.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -37,6 +40,10 @@
     <style name="TextInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:fontFamily">@font/fontbold</item>
         <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="popupStyle" parent="Widget.AppCompat.PopupMenu">
+        <item name="popupMenuBackground">@drawable/menu_background</item>
     </style>
 </resources>
 
