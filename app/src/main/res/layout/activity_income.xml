@@ -91,6 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fontmedium"
+            android:inputType="number"
             android:imeOptions="actionDone"
             android:maxLength="50"
             android:padding="16dp"

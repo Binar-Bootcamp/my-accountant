@@ -10,50 +10,50 @@ import com.binaracademy.myaccountant.data.presenter.InitialContract
 import com.binaracademy.myaccountant.data.presenter.InitialPresenter
 import com.binaracademy.myaccountant.databinding.ActivityIncomeBinding
 import com.binaracademy.myaccountant.ui.main.MainActivity
+import com.binaracademy.myaccountant.util.helpers.Global
+import com.binaracademy.myaccountant.util.helpers.SharedPreferencesManager
 import com.binaracademy.myaccountant.util.helpers.intentTo
 import kotlinx.coroutines.launch
 
 class IncomeActivity : AppCompatActivity(), InitialContract.View {
-
-    private val presenter = InitialPresenter()
-
-    private val binding: ActivityIncomeBinding by lazy {
-        ActivityIncomeBinding.inflate(layoutInflater)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-        presenter.setView(this)
-
-        val shared: SharedPreferences = getSharedPreferences("prefData", MODE_PRIVATE)
-        val userType = when (shared.getString("saving_type", "")) {
-            "Si Life Balance" -> UserType.LIFE_BALANCE
-            "Si Paling Hemat" -> UserType.PALING_HEMAT
-            "Si Tukang Shopping" -> UserType.TUKANG_SHOPPING
-            else -> UserType.LIFE_BALANCE
-        }
-
-        binding.btnSave.setOnClickListener {
-            val income = binding.inputIncome.text
-
-            lifecycleScope.launch {
-                presenter.saveInitialIncome(userType, income.toString().toLong())
-            }
-        }
-    }
-
-    override fun onSaveInitialError(error: String) {
-        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onSaveInitialSuccess(amount: Long) {
-        val shared: SharedPreferences = getSharedPreferences("prefData", MODE_PRIVATE)
-        val editor = shared.edit()
-        editor.apply {
-            putString("gaji", amount.toString())
-            apply()
-        }
-        intentTo(MainActivity::class.java)
-    }
+	
+	private val presenter = InitialPresenter()
+	
+	private val binding: ActivityIncomeBinding by lazy {
+		ActivityIncomeBinding.inflate(layoutInflater)
+	}
+	
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(binding.root)
+		presenter.setView(this)
+		
+		val userTable = Global.USER_TABLE
+		val type = Global.TYPE
+		
+		val sharedPreferences = SharedPreferencesManager(this, userTable)
+		
+		val userType = when (sharedPreferences.getString(type, "")) {
+			"Si Life Balance" -> UserType.LIFE_BALANCE
+			"Si Paling Hemat" -> UserType.PALING_HEMAT
+			"Si Tukang Shopping" -> UserType.TUKANG_SHOPPING
+			else -> UserType.LIFE_BALANCE
+		}
+		
+		binding.btnSave.setOnClickListener {
+			val income = binding.inputIncome.text
+			
+			lifecycleScope.launch {
+				presenter.saveInitialIncome(userType, income.toString().toLong())
+			}
+		}
+	}
+	
+	override fun onSaveInitialError(error: String) {
+		Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
+	}
+	
+	override fun onSaveInitialSuccess(amount: Long) {
+		intentTo(MainActivity::class.java)
+	}
 }
