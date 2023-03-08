@@ -113,6 +113,7 @@
                     tools:ignore="SmallSp" />
 
                 <TextView
+                    android:id="@+id/tv_income_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/fontbold"
@@ -156,6 +157,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tv_expense_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/fontbold"
@@ -201,6 +203,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tv_budget_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/fontbold"
@@ -246,6 +249,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tv_total_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/fontbold"
