@@ -29,7 +29,7 @@ class SplashScreenActivity : AppCompatActivity() {
 		val sharedPreferences = SharedPreferencesManager(this, appTable)
 
 		val isFirstValue = sharedPreferences.getBoolean(isFirst, true)
-		val isUsernameProvided = sharePreference.getString("username", "").isNullOrBlank()
+		val isUsernameProvided = sharedPreferences.getString("username", "").isNullOrBlank()
 
 		Handler(Looper.getMainLooper()).postDelayed({
 			val i = if (isFirstValue){
