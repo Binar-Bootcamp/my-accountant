@@ -5,7 +5,6 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.ActivityRegisterBinding
-import com.binaracademy.myaccountant.ui.finance.IncomeFragment
 import com.binaracademy.myaccountant.ui.income.IncomeActivity
 import com.binaracademy.myaccountant.ui.profile.ProfileFragment
 import com.binaracademy.myaccountant.util.helpers.intentTo

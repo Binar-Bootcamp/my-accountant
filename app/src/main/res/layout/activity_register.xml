@@ -57,9 +57,9 @@
         android:id="@+id/btn_info"
         android:layout_width="28dp"
         android:layout_height="28dp"
-        android:layout_marginStart="16dp"
         android:background="@drawable/round_button"
         android:src="@drawable/ic_help"
+        android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout"
         app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
@@ -104,6 +104,7 @@
             android:maxLength="50"
             android:padding="16dp"
             android:singleLine="true"
+            android:textColor="@color/raisin_black"
             android:textColorHint="@color/gray"
             android:textSize="12sp" />
 
@@ -133,6 +134,7 @@
             android:inputType="none"
             android:maxLength="50"
             android:padding="16dp"
+            android:textColor="@color/raisin_black"
             android:textColorHint="@color/gray"
             android:textSize="12sp" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:orientation="vertical"
     tools:context=".ui.history.HistoryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="28dp"
+        android:paddingTop="32dp"
+        app:title="History"
+        app:titleTextColor="@color/black" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_history"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="History" />
+        android:layout_marginTop="24dp"
+        tools:listitem="@layout/child_history" />
 
-</FrameLayout>
+
+</LinearLayout>
+
+

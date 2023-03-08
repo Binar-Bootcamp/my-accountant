@@ -1,14 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.finance.OutcomeFragment">
+    android:paddingHorizontal="20dp"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tv_type"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Outcome" />
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontbold"
+        android:text="@string/expenditure_type"
+        android:textColor="@color/raisin_black"
+        android:textSize="20sp" />
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/choose_expenditure_type"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/type_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontmedium"
+            android:inputType="none"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:textColor="@color/raisin_black"
+            android:textColorHint="@color/gray"
+            android:textSize="12sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_source_income"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontbold"
+        android:text="@string/description"
+        android:textColor="@color/raisin_black"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fi_income"
+        style="@style/TextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/source_your_income"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontmedium"
+            android:imeOptions="actionNext"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@color/raisin_black"
+            android:textColorHint="@color/gray"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_total_income"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontbold"
+        android:text="@string/total_income"
+        android:textColor="@color/raisin_black"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fi_total"
+        style="@style/TextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/your_income"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_income"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontmedium"
+            android:imeOptions="actionDone"
+            android:maxLength="50"
+            android:padding="16dp"
+            android:singleLine="true"
+            android:textColor="@color/raisin_black"
+            android:textColorHint="@color/gray"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/fontbold"
+        android:text="@string/date"
+        android:textColor="@color/raisin_black"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fi_date"
+        style="@style/TextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/select_date"
+        app:endIconMode="custom"
+        app:endIconTint="@color/raisin_black"
+        app:endIconDrawable="@drawable/baseline_calendar_month_24"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontmedium"
+            android:maxLength="50"
+            android:singleLine="true"
+            android:textColor="@color/raisin_black"
+            android:textColorHint="@color/gray"
+            android:textSize="12sp"
+            android:enabled="false"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_vp_next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:paddingVertical="20dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/fontbold"
+        android:text="@string/save"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        app:cornerRadius="16dp" />
+
+</LinearLayout>

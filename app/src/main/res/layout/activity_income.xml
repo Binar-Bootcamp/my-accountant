@@ -95,6 +95,7 @@
             android:maxLength="50"
             android:padding="16dp"
             android:singleLine="true"
+            android:textColor="@color/raisin_black"
             android:textColorHint="@color/gray"
             android:textSize="12sp" />
 

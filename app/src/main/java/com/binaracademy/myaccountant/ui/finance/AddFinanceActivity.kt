@@ -1,13 +1,16 @@
 package com.binaracademy.myaccountant.ui.finance
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.View
+import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.binaracademy.myaccountant.databinding.ActivityAddFinanceBinding
+import com.binaracademy.myaccountant.ui.main.MainActivity
+import com.binaracademy.myaccountant.util.helpers.intentTo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -27,11 +30,15 @@ class AddFinanceActivity : AppCompatActivity() {
 		
 		initData()
 		initView()
+		
+		binding.imgBack.setOnClickListener {
+			finish()
+		}
 	}
 	
 	private fun initData() {
-		fragmentList.add(IncomeFragment.newInstance("A", "V"))
-		fragmentList.add(OutcomeFragment.newInstance("A", "V"))
+		fragmentList.add(IncomeFragment())
+		fragmentList.add(OutcomeFragment())
 	}
 	
 	private fun initView() {
@@ -47,18 +54,15 @@ class AddFinanceActivity : AppCompatActivity() {
 		
 		tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
 			override fun onTabSelected(tab: TabLayout.Tab) {
-				Log.i("TAB", "Select")
 				if (tab.position == 0)
 					tabs.setSelectedTabIndicatorColor(Color.parseColor("#005ECD"))
 				else
 					tabs.setSelectedTabIndicatorColor(Color.parseColor("#FF0000"))
 			}
 			
-			override fun onTabUnselected(tab: TabLayout.Tab) {
-			}
+			override fun onTabUnselected(tab: TabLayout.Tab) {}
 			
-			override fun onTabReselected(tab: TabLayout.Tab) {
-			}
+			override fun onTabReselected(tab: TabLayout.Tab) {}
 		})
 		
 		tabLayoutMediator.attach()
