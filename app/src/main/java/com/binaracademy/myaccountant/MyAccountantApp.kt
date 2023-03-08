@@ -13,6 +13,7 @@ class MyAccountantApp: Application() {
     override fun onCreate() {
         super.onCreate()
         database = Room.databaseBuilder(this, AppDatabase::class.java, "app_database")
+            .fallbackToDestructiveMigration()
             .build()
     }
 }

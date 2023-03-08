@@ -1,8 +1,18 @@
 package com.binaracademy.myaccountant.data.presenter
 
+import com.binaracademy.myaccountant.data.enums.UserType
+
 interface TransactionContract {
-    // TODO:: add presenter contract
-    interface Presenter
-    // TODO:: add view contract
-    interface View
+    interface Presenter {
+
+
+        fun changeUserSavingType(userType: UserType)
+
+    }
+    interface View {
+
+
+        fun onChangedUserSavingType()
+
+    }
 }
