@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:paddingStart="10dp"
-    android:paddingEnd="10dp">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -28,7 +26,7 @@
                 android:fontFamily="@font/fontsemibold"
                 android:textColor="@color/raisin_black"
                 android:textSize="16sp"
-                tools:text="Date" />
+                tools:text="Date"/>
 
             <TextView
                 android:id="@+id/tv_child_amount"
@@ -36,10 +34,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_child_date"
                 android:background="@drawable/textview_rounded"
-                android:fontFamily="@font/fontbold"
                 android:gravity="center"
+                android:fontFamily="@font/fontmedium"
                 android:textColor="@color/anti_flash_white"
-                android:textSize="10sp"
+                android:textSize="8sp"
                 tools:ignore="SmallSp,TextContrastCheck"
                 tools:text="+Rp. 50.000.000" />
 
@@ -60,11 +58,5 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-    <com.google.android.material.divider.MaterialDivider
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-       />
-
 
 </LinearLayout>

@@ -4,46 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5dp"
+    android:paddingHorizontal="16dp"
     android:orientation="vertical"
     tools:context=".ui.history.HistoryFragment">
 
     <androidx.appcompat.widget.Toolbar
-
-        android:id="@+id/my_toolbar"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:elevation="5dp"
-        app:contentInsetStart="0dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="UseCompoundDrawables">
-
-            <ImageView
-                android:id="@+id/toolbar_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/todo"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:src="@drawable/baseline_arrow_back_24" />
-
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:fontFamily="@font/fontbold"
-                android:text="@string/history"
-                android:textColor="@color/raisin_black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-    </androidx.appcompat.widget.Toolbar>
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="28dp"
+        android:paddingTop="32dp"
+        app:title="History"
+        app:titleTextColor="@color/black" />
 
     <com.google.android.material.divider.MaterialDivider
         android:layout_width="match_parent"
