@@ -1,5 +1,7 @@
 package com.binaracademy.myaccountant.ui.profile
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.FragmentProfileBinding
+import com.binaracademy.myaccountant.ui.splashscreen.SplashScreenActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,11 +27,22 @@ class ProfileFragment : Fragment() {
     private var _binding : FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var sharePreference: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+        setUpSharePreference()
+
+        //Set name from RegisterActivity
+        val nameReceiver = sharePreference?.getString("username", "Your Name")
+        binding.tvNameProfile.text = nameReceiver
+
+
         return binding.root
 //        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
     }
@@ -36,5 +50,12 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+    }
+
+    private fun setUpSharePreference() {
+        sharePreference = this.requireActivity().getSharedPreferences("prefData",
+            AppCompatActivity.MODE_PRIVATE
+        )
+        editor = sharePreference.edit()
     }
 }
