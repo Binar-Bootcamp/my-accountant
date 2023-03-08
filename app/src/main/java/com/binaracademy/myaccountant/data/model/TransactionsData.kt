@@ -49,14 +49,14 @@ object TransactionsData {
 	)
 	
 	private val transactionImages = intArrayOf(
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home,
-		R.drawable.ic_category_home
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income,
+		R.drawable.ic_category_home_income
 	)
 	
 	val listData: ArrayList<Transaction>
