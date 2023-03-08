@@ -22,7 +22,7 @@
     <string name="desember_2023">Desember, 2023</string>
     <string name="income">Income</string>
     <string name="icon_wallet">Icon Wallet</string>
-    <string name="rp">Rp </string>
+    <string name="rp">Rp. </string>
     <string name="_4_600_000">4.600.000</string>
     <string name="expense">Expense</string>
     <string name="rp_1_670_000">Rp.1.670.000</string>
@@ -61,7 +61,7 @@
     <string name="choose_expenditure_type">Choose Expenditure Type</string>
     <string name="history_total">total</string>
     <string name="savings">Savings</string>
-
+    <string name="currency_amount">Rp. %1$d</string>
     <string-array name="spinner_item">
         <item> </item>
         <item>Array Item One</item>

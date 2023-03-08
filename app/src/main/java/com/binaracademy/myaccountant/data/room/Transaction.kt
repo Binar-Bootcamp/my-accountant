@@ -8,7 +8,7 @@ import java.util.Date
 
 @Entity(tableName = "transactions")
 data class Transaction(
-    @PrimaryKey var id: Long = 0L,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0L,
     var type: TransactionType = TransactionType.INCOME,
     var source: String = "",
     var description: String = "",

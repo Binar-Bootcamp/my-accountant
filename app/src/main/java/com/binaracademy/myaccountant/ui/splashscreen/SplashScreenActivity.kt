@@ -8,10 +8,10 @@ import android.content.SharedPreferences.Editor
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.databinding.ActivitySplashScreenBinding
 import com.binaracademy.myaccountant.ui.landing.LandingActivity
+import com.binaracademy.myaccountant.ui.main.MainActivity
 import com.binaracademy.myaccountant.ui.register.RegisterActivity
 
 @SuppressLint("CustomSplashScreen")
@@ -30,10 +30,13 @@ class SplashScreenActivity : AppCompatActivity() {
 		setUpSharePreference()
 		
 		val isFirst = sharePreference.getBoolean(IS_FIRST, true)
+		val isUsernameProvided = sharePreference.getString("username", "").isNullOrBlank()
 		
 		Handler(Looper.getMainLooper()).postDelayed({
-			var i = if (isFirst){
+			val i = if (isFirst){
 				Intent(this, LandingActivity::class.java)
+			} else if (isUsernameProvided) {
+				Intent(this, MainActivity::class.java)
 			} else {
 				Intent(this, RegisterActivity::class.java)
 			}
