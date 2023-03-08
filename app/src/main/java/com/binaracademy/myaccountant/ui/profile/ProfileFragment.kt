@@ -1,5 +1,6 @@
 package com.binaracademy.myaccountant.ui.profile
 
+import android.content.SharedPreferences
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -35,6 +36,13 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
+
+
+        //Set name from RegisterActivity
+        val namaReceiver = arguments?.getString("username")
+        binding.tvNameProfile.text = namaReceiver
+
+
 
         setUpSharePreference()
 
