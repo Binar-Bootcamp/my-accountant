@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item1"
+        android:icon="@drawable/finance_chart_outlined_24"
+        android:title="@string/si_life_balance"/>
+    <item
+        android:id="@+id/item2"
+        android:icon="@drawable/layout_services_outlined_24"
+        android:title="@string/si_hemat"/>
+    <item
+        android:id="@+id/item3"
+        android:icon="@drawable/activity_outlined_24"
+        android:title="@string/si_shopping"/>
+</menu>

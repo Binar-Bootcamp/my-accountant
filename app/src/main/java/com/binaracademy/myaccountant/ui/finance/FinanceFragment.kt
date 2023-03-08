@@ -2,9 +2,11 @@ package com.binaracademy.myaccountant.ui.finance
 
 import java.util.Calendar
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -34,6 +36,18 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 		
 		list.addAll(TransactionsData.listData)
 		
+		setUpRecycleView()
+		
+		binding.imgType.setOnClickListener {
+			val popup = PopupMenu(this.requireActivity(), it)
+			popup.inflate(R.menu.popup_menu)
+			popup.show()
+		}
+		
+		return binding.root
+	}
+	
+	private fun setUpRecycleView() {
 		val layoutManager = LinearLayoutManager(activity)
 		recyclerView = binding.rvTransaction
 		
@@ -41,7 +55,6 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 		recyclerView.layoutManager = layoutManager
 		recyclerView.setHasFixedSize(true)
 		recyclerView.adapter = adapter
-		return binding.root
 	}
 	
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -56,11 +69,12 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 			binding.root.context.intentTo(AddFinanceActivity::class.java)
 		}
 	}
-
+	
 	override fun onUpdatedSummarySuccess(summary: Summary) {
 		binding.tvIncomeAmount.text = summary.income.toString()
 		binding.tvBudgetAmount.text = resources.getString(R.string.currency_amount, summary.budget)
-		binding.tvExpenseAmount.text = resources.getString(R.string.currency_amount, summary.expense)
+		binding.tvExpenseAmount.text =
+			resources.getString(R.string.currency_amount, summary.expense)
 		binding.tvTotalAmount.text = resources.getString(R.string.currency_amount, summary.total)
 	}
 }

@@ -7,12 +7,5 @@
         android:title="@string/search"
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.widget.SearchView" />
-<!--    <item-->
-<!--        android:id="@+id/action_sort"-->
-<!--        android:icon="@drawable/ic_sort"-->
-<!--        android:title="Search"-->
-<!--        app:showAsAction="always"-->
-<!--        />-->
-
 
 </menu>
