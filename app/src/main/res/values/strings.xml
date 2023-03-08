@@ -51,6 +51,14 @@
     <string name="ex_1_250_000">Ex: 1.250.000</string>
     <string name="minimum_nominal">Minimum nominal is 100.000</string>
     <string name="your_income">Your Income</string>
+    <string name="source_of_income">Source of income</string>
+    <string name="source_your_income">Source Your Income</string>
+    <string name="total_income">Total Income</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="expenditure_type">Expenditure type</string>
+    <string name="select_date">Select Date</string>
+    <string name="choose_expenditure_type">Choose Expenditure Type</string>
 
     <string-array name="spinner_item">
         <item> </item>
