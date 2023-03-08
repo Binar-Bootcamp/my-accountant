@@ -59,6 +59,7 @@
     <string name="expenditure_type">Expenditure type</string>
     <string name="select_date">Select Date</string>
     <string name="choose_expenditure_type">Choose Expenditure Type</string>
+    <string name="history_total">total</string>
 
     <string-array name="spinner_item">
         <item> </item>
