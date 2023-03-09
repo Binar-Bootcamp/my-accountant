@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fontbold"
-        android:text="Your Name"
+        tools:text="Your Name"
         android:textSize="24sp"
         android:textColor="@color/raisin_black"
         android:layout_gravity="center"
@@ -71,13 +71,14 @@
             android:textSize="18sp"
             android:textColor="@color/raisin_black"/>
 
+
         <TextView
             android:id="@+id/tv_saving_profile"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/fontsemibold"
-            android:text="Rp 10.000.000"
+            tools:text="Rp 10.000.000"
             android:textSize="16sp"
             android:textColor="@color/dark_pastel_green"/>
 

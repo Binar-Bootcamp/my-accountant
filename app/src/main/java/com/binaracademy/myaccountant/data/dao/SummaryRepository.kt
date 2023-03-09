@@ -8,4 +8,6 @@ interface SummaryRepository {
 
     suspend fun findSummaryById(id: String): Summary
 
+    suspend fun findAllSummary(): List<Summary>
+
 }
