@@ -1,7 +1,9 @@
 package com.binaracademy.myaccountant.ui.income
 
+import android.app.Activity
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -46,6 +48,22 @@ class IncomeActivity : AppCompatActivity(), InitialContract.View {
 			lifecycleScope.launch {
 				presenter.saveInitialIncome(userType, income.toString().toLong())
 			}
+		}
+		
+		binding.root.setOnClickListener {
+			hideSoftKeyboard(this)
+		}
+	}
+	
+	private fun hideSoftKeyboard(activity: Activity) {
+		val inputMethodManager = activity.getSystemService(
+			INPUT_METHOD_SERVICE
+		) as InputMethodManager
+		if (inputMethodManager.isAcceptingText) {
+			inputMethodManager.hideSoftInputFromWindow(
+				activity.currentFocus!!.windowToken,
+				0
+			)
 		}
 	}
 	

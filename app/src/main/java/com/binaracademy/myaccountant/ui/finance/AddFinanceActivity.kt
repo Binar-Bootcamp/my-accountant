@@ -1,16 +1,14 @@
 package com.binaracademy.myaccountant.ui.finance
 
+import android.app.Activity
 import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.binaracademy.myaccountant.databinding.ActivityAddFinanceBinding
-import com.binaracademy.myaccountant.ui.main.MainActivity
-import com.binaracademy.myaccountant.util.helpers.intentTo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -33,6 +31,22 @@ class AddFinanceActivity : AppCompatActivity() {
 		
 		binding.imgBack.setOnClickListener {
 			finish()
+		}
+		
+		binding.root.setOnClickListener {
+			hideSoftKeyboard(this)
+		}
+	}
+	
+	private fun hideSoftKeyboard(activity: Activity) {
+		val inputMethodManager = activity.getSystemService(
+			INPUT_METHOD_SERVICE
+		) as InputMethodManager
+		if (inputMethodManager.isAcceptingText) {
+			inputMethodManager.hideSoftInputFromWindow(
+				activity.currentFocus!!.windowToken,
+				0
+			)
 		}
 	}
 	

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.databinding.ChildHistoryBinding
+import com.binaracademy.myaccountant.util.helpers.NumberFormatter
 import com.binaracademy.myaccountant.util.helpers.formatString
 import java.util.*
 import kotlin.collections.ArrayList
@@ -31,8 +32,8 @@ class HistoryAdapter(
 	
 	override fun onBindViewHolder(holder : HistoryViewHolder , position : Int) {
 		val transaction = listTransaction[position]
-		holder.grandTotal.text = historyContext.resources.getString(R.string.currency_amount, transaction.amount)
-		holder.totall.text =  historyContext.resources.getString(R.string.currency_amount, transaction.amount)
+		holder.grandTotal.text = NumberFormatter.formatRupiah(transaction.amount)
+		holder.totall.text =  NumberFormatter.formatRupiah(transaction.amount)
 		holder.bulan.text = transaction.createdAt.formatString("MMMM yyyy")
 	}
 
