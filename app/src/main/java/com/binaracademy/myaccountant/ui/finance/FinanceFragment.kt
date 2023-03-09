@@ -93,6 +93,7 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
         recyclerView = binding.rvTransaction
 
         val adapter = ListTransactionAdapter(arrayListOf())
+
         presenter.getAllTransactions().observe(viewLifecycleOwner) {
             val calendar = Calendar.getInstance()
             val id = "${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)}"

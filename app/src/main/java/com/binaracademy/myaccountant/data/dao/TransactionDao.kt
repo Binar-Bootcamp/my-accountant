@@ -15,6 +15,9 @@ interface TransactionDao {
     fun insertTransaction(transaction: Transaction)
 
     @Query("SELECT * FROM transactions WHERE created_at BETWEEN :start AND :end ORDER BY created_at DESC")
-    fun findAllTransaction(start: Long, end: Long): LiveData<List<Transaction>>
+    fun findAllTransactionFromTo(start: Long, end: Long): LiveData<List<Transaction>>
+
+    @Query("SELECT * FROM transactions ORDER BY created_at DESC")
+    fun findAllTransaction(): LiveData<List<Transaction>>
 
 }
