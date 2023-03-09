@@ -12,9 +12,9 @@ import com.binaracademy.myaccountant.data.presenter.TransactionContract
 import com.binaracademy.myaccountant.data.presenter.TransactionPresenter
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.databinding.FragmentIncomeBinding
+import com.binaracademy.myaccountant.util.helpers.formatString
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -84,10 +84,7 @@ class IncomeFragment : Fragment(), TransactionContract.View {
             datePicker.show(parentFragmentManager, "DatePicker")
             datePicker.addOnPositiveButtonClickListener { selected ->
                 calendar.timeInMillis = selected
-                val dateFormat = SimpleDateFormat(
-                    "dd MMMM yyyy",
-                    Locale("id", "ID")
-                ).format(calendar.time)
+                val dateFormat = calendar.time.formatString("dd MMMM yyyy")
                 binding.fiDate.editText?.setText(dateFormat)
             }
         }

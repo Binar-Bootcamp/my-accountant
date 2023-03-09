@@ -13,12 +13,10 @@ import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.data.enums.TransactionType
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.util.helpers.NumberFormatter
+import com.binaracademy.myaccountant.util.helpers.formatString
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import java.text.SimpleDateFormat
-import java.util.Locale
 import java.util.concurrent.ThreadLocalRandom
-import kotlin.collections.ArrayList
 
 class ListTransactionAdapter(private val listTransaction: ArrayList<Transaction>) :
 	RecyclerView.Adapter<ListTransactionAdapter.ListViewHolder>() {
@@ -53,12 +51,6 @@ class ListTransactionAdapter(private val listTransaction: ArrayList<Transaction>
 	@RequiresApi(Build.VERSION_CODES.O)
 	override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
 		val transaction = listTransaction[position]
-		
-		val dateFormat = SimpleDateFormat("MMMM yyyy", Locale("id", "ID"))
-		val formattedDate = dateFormat.format(transaction.createdAt)
-		
-		transaction.type
-		
 		Glide.with(holder.itemView.context)
 			.load(getTransactionIcon(transaction.type))
 			.apply(RequestOptions().override(55, 55))
@@ -66,7 +58,7 @@ class ListTransactionAdapter(private val listTransaction: ArrayList<Transaction>
 		
 		holder.tvCategory.text = transaction.source
 		holder.tvDescriptions.text = transaction.description
-		holder.tvDate.text = formattedDate
+		holder.tvDate.text = transaction.createdAt.formatString("d MMMM yyyy")
 		holder.tvAmount.text = NumberFormatter.formatRupiah(transaction.amount)
 		holder.itemView.setOnClickListener { onItemClickCallback.onItemClick(listTransaction[holder.adapterPosition]) }
 	}

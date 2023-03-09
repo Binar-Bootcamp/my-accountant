@@ -18,6 +18,7 @@ import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.databinding.FragmentFinanceBinding
 import com.binaracademy.myaccountant.util.helpers.NumberFormatter
+import com.binaracademy.myaccountant.util.helpers.formatString
 import com.binaracademy.myaccountant.util.helpers.intentTo
 import kotlinx.coroutines.launch
 import java.util.*
@@ -39,6 +40,7 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
         setupPresenterAndFetchInitial()
         setUpRecycleView()
         setupMenuPopUp()
+        binding.tvDateTitle.text = Date().formatString("MMMM yyyy")
         binding.fabAdd.setOnClickListener {
             binding.root.context.intentTo(AddFinanceActivity::class.java)
         }
