@@ -28,7 +28,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins"
-        android:text="Masukkan Nama beserta Tipe Penghematan uang"
+        android:text="Masukkan Nama Beserta Tipe Penghematan uang"
         android:textColor="#868686"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -120,7 +120,7 @@
         app:layout_constraintStart_toEndOf="@+id/textInputLayout"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_continue"
         android:layout_width="350dp"
         android:layout_height="80dp"
@@ -133,9 +133,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="200dp"
         android:layout_marginEnd="20dp"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

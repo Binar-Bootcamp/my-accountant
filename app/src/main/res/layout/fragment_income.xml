@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
-        android:text="Input Your Annual Income"
+        android:text="Masukkan Gaji Bulanan Anda"
         android:textColor="#B5B5B5"
         android:textFontWeight="700"
         android:textSize="20sp"
@@ -60,12 +60,13 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_income"
+            android:inputType="number"
             android:layout_width="350dp"
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_save"
         android:layout_width="335dp"
         android:layout_height="70dp"
@@ -78,6 +79,7 @@
         android:textStyle="bold"
         android:fontFamily="@font/poppins"
         android:drawableRight="@mipmap/ic_right_hand_arrow"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

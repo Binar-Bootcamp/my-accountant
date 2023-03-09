@@ -15,7 +15,7 @@
         android:layout_weight="1"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"
-        tools:layout="@layout/fragment_finance" />
+        tools:layout="@layout/fragment_finance"/>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
