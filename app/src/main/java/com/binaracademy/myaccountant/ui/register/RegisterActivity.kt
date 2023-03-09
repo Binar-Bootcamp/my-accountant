@@ -9,15 +9,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.R
+import com.binaracademy.myaccountant.databinding.ActivityRegisterBinding
 import com.binaracademy.myaccountant.databinding.FragmentRegisterBinding
+import com.binaracademy.myaccountant.ui.income.IncomeActivity
+import com.binaracademy.myaccountant.util.helpers.Global
+import com.binaracademy.myaccountant.util.helpers.SharedPreferencesManager
+import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class RegisterActivity : AppCompatActivity() {
 
-    lateinit var binding : FragmentRegisterBinding
+    lateinit var binding: FragmentRegisterBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

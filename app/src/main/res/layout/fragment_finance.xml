@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainActivity">
 
     <!-- Header-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -18,11 +19,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/img_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/icon_arrow_down"
-            android:src="@drawable/baseline_arrow_drop_down_24" />
+            android:clickable="true"
+            android:src="@drawable/baseline_arrow_drop_down_24"
+            android:focusable="true" />
 
         <TextView
             android:layout_width="0dp"
@@ -97,30 +101,14 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tv_income_amount"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/fontbold"
-                    android:text="@string/rp"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    tools:ignore="SmallSp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/fontbold"
-                    android:text="@string/_4_600_000"
-                    android:textColor="@color/white"
-                    android:textSize="16sp" />
-
-
-            </LinearLayout>
+                android:fontFamily="@font/fontbold"
+                android:text="@string/_4_600_000"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -155,6 +143,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tv_expense_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/fontbold"
@@ -200,6 +189,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tv_budget_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/fontbold"
@@ -245,6 +235,7 @@
                             tools:ignore="SmallSp" />
 
                         <TextView
+                            android:id="@+id/tv_total_amount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/fontbold"
@@ -286,5 +277,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_view"
         tools:listitem="@layout/item_transaction" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:backgroundTint="@color/blue"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/icon_add"
+        android:src="@drawable/ic_add"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,13 +8,16 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.CounterChildBinding
 import com.binaracademy.myaccountant.ui.counter.model.ModelItem
 import com.bumptech.glide.Glide
+import java.text.NumberFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import androidx.recyclerview.widget.RecyclerView as RecyclerView1
 
-class AdapterItem : RecyclerView.Adapter<AdapterItem.HolderItem> , Filterable {
+class AdapterItem : RecyclerView1.Adapter<AdapterItem.HolderItem> , Filterable {
 	private var context : Context
 	var itemList : ArrayList<ModelItem>
 	private var filterList : ArrayList<ModelItem>
@@ -41,29 +44,21 @@ class AdapterItem : RecyclerView.Adapter<AdapterItem.HolderItem> , Filterable {
 	}
 	
 	override fun onBindViewHolder(holder : HolderItem , position : Int) {
-		val currency = "IDR "
-		
 		val model = itemList[position]
-		
 		val nama = model.nama
 		val url = model.url
 		val location = model.location
-		val price = model.price.toString()
-		
 		Glide.with(binding.root.context)
 			.load(url)
 			.into(holder.imgCounter)
 		holder.tvNama.text = nama
 		holder.Tvloc.text = location
-		holder.tvPrice.text = buildString {
-			append(currency)
-			append(price)
-		}
-		
+		val currencyFormat : NumberFormat = NumberFormat.getCurrencyInstance(Locale("id" , "ID"))
+		holder.tvPrice.text = currencyFormat.format(model.price)
 		
 	}
 	
-	inner class HolderItem(itemView : View) : RecyclerView.ViewHolder(itemView) {
+	inner class HolderItem(itemView : View) : RecyclerView1.ViewHolder(itemView) {
 		
 		var imgCounter : ImageView
 		var tvNama : TextView

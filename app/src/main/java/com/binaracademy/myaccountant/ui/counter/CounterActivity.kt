@@ -11,7 +11,8 @@ import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.databinding.ActivityCounterBinding
 import com.binaracademy.myaccountant.ui.counter.adapter.AdapterItem
 import com.binaracademy.myaccountant.ui.counter.model.CounterObj
-
+import java.text.NumberFormat
+import java.util.*
 
 
 class CounterActivity : AppCompatActivity() {
@@ -32,13 +33,14 @@ class CounterActivity : AppCompatActivity() {
 			sortDialog()
 		}
 		
+		
 	}
 	
-
+	
 	private fun sortDialog() {
 		
 		val options = arrayOf("Cheapest-Expensive" , "Expensive-Cheapest")
-		val dialog = AlertDialog.Builder(this, R.style.CustomAlertDialog)
+		val dialog = AlertDialog.Builder(this , R.style.CustomAlertDialog)
 		dialog.setTitle("Sort By").setItems(options) { dialogInterface , i ->
 			if (i == 0) {
 				dialogInterface.dismiss()

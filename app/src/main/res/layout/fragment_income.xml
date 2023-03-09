@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingHorizontal="20dp"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView3"
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="58dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/fontbold"
         android:text="Initial Income"
         android:textColor="@color/black"
         android:textFontWeight="700"
@@ -26,9 +27,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/fontbold"
         android:text="Masukkan Gaji Bulanan Anda"
         android:textColor="#B5B5B5"
-        android:textFontWeight="700"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -39,24 +40,33 @@
         android:layout_height="31dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
+        android:fontFamily="@font/fontbold"
         android:text="Income"
         android:textColor="@color/black"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/tv_source_income"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:hint="Masukkan Gaji Bulanan Anda"
-        app:helperText="Minimal Rp. 1.000.000"
-        app:helperTextTextColor="@color/ferrari_red"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        android:fontFamily="@font/fontbold"
+        android:text="@string/source_of_income"
+        android:textColor="@color/raisin_black"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fi_income"
+        style="@style/TextInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/source_your_income"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_income"
@@ -77,12 +87,11 @@
         android:text="Continue"
         android:textColor="@color/anti_flash_white"
         android:textStyle="bold"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/fontbold"
         android:drawableRight="@mipmap/ic_right_hand_arrow"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -22,7 +22,7 @@
     <string name="desember_2023">Desember, 2023</string>
     <string name="income">Income</string>
     <string name="icon_wallet">Icon Wallet</string>
-    <string name="rp">Rp </string>
+    <string name="rp">Rp. </string>
     <string name="_4_600_000">4.600.000</string>
     <string name="expense">Expense</string>
     <string name="rp_1_670_000">Rp.1.670.000</string>
@@ -41,7 +41,34 @@
     <string name="search">Search</string>
     <string name="todo">TODO</string>
     <string name="next">Next</string>
-
+    <string name="icon_add">Icon Add</string>
+    <string name="save">Save</string>
+    <string name="lets_register">Lets Register</string>
+    <string name="masukkan_nama_beserta_tipe_penghematan_uang">Masukkan Nama beserta Tipe Penghematan uang</string>
+    <string name="name">Name</string>
+    <string name="input_your_name">Input Your Name</string>
+    <string name="saving_type">Saving Type</string>
+    <string name="choose_your_saving">Choose Your Saving</string>
+    <string name="lanjut">Continue</string>
+    <string name="initial_income">Initial Income</string>
+    <string name="your_first_nominal_income">Your first nominal income</string>
+    <string name="ex_1_250_000">Ex: 1.250.000</string>
+    <string name="minimum_nominal">Minimum nominal is 100.000</string>
+    <string name="your_income">Your Income</string>
+    <string name="source_of_income">Source of income</string>
+    <string name="source_your_income">Source Your Income</string>
+    <string name="total_income">Total Income</string>
+    <string name="date">Date</string>
+    <string name="description">Description</string>
+    <string name="expenditure_type">Expenditure type</string>
+    <string name="select_date">Select Date</string>
+    <string name="choose_expenditure_type">Choose Expenditure Type</string>
+    <string name="history_total">total</string>
+    <string name="savings">Savings</string>
+    <string name="currency_amount">Rp. %1$d</string>
+    <string name="si_life_balance">Si Life Balance</string>
+    <string name="si_hemat">Si Hemat</string>
+    <string name="si_shopping">Si Shopping</string>
     <string-array name="spinner_item">
         <item> </item>
         <item>Array Item One</item>

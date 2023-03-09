@@ -1,8 +1,16 @@
 package com.binaracademy.myaccountant.data.presenter
 
+import com.binaracademy.myaccountant.data.room.Transaction
+
 interface TransactionContract {
-    // TODO:: add presenter contract
-    interface Presenter
-    // TODO:: add view contract
-    interface View
+    interface Presenter {
+        suspend fun saveTransaction(transaction: Transaction)
+    }
+    interface View {
+
+        fun onSaveTransactionSuccess()
+
+        fun onSaveTransactionFailure(message: String)
+
+    }
 }
