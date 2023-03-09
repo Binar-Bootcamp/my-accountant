@@ -59,7 +59,7 @@
         android:layout_height="28dp"
         android:background="@drawable/round_button"
         android:src="@drawable/ic_help"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
         app:layout_constraintStart_toEndOf="@+id/textInputLayout"
         app:layout_constraintTop_toTopOf="@+id/textInputLayout" />
@@ -76,6 +76,7 @@
         android:textAllCaps="false"
         android:textSize="16sp"
         app:cornerRadius="16dp"
+        android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
