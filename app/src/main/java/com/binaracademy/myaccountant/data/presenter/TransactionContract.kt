@@ -1,18 +1,16 @@
 package com.binaracademy.myaccountant.data.presenter
 
-import com.binaracademy.myaccountant.data.enums.UserType
+import com.binaracademy.myaccountant.data.room.Transaction
 
 interface TransactionContract {
     interface Presenter {
-
-
-        fun changeUserSavingType(userType: UserType)
-
+        suspend fun saveTransaction(transaction: Transaction)
     }
     interface View {
 
+        fun onSaveTransactionSuccess()
 
-        fun onChangedUserSavingType()
+        fun onSaveTransactionFailure(message: String)
 
     }
 }

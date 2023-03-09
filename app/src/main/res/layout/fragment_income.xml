@@ -28,7 +28,7 @@
         app:boxCornerRadiusTopStart="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_source"
+            android:id="@+id/tit_input_source"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fontmedium"
@@ -64,7 +64,7 @@
         app:boxCornerRadiusTopStart="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_income"
+            android:id="@+id/tit_input_income"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fontmedium"
@@ -103,7 +103,7 @@
         app:boxCornerRadiusTopStart="12dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_date"
+            android:id="@+id/tit_input_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/fontmedium"

@@ -64,7 +64,7 @@ class ListTransactionAdapter(private val listTransaction: ArrayList<Transaction>
 			.apply(RequestOptions().override(55, 55))
 			.into(holder.imgPhoto)
 		
-		holder.tvCategory.text = if (transaction.source == "Initial") "Income" else transaction.source
+		holder.tvCategory.text = transaction.source
 		holder.tvDescriptions.text = transaction.description
 		holder.tvDate.text = formattedDate
 		holder.tvAmount.text = NumberFormatter.formatRupiah(transaction.amount)

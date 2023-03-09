@@ -22,7 +22,7 @@ class InitialPresenter(
 
             val transaction = Transaction()
             transaction.amount = amount
-            transaction.source = "Initial"
+            transaction.source = "Income"
             transaction.type = TransactionType.INCOME
             transaction.description = "Initial Income"
             transactionRepository.createTransaction(transaction)
@@ -31,8 +31,8 @@ class InitialPresenter(
             summary.type = type
             when (type) {
                 UserType.LIFE_BALANCE -> summary.budget = amount * 1/2
-                UserType.PALING_HEMAT -> summary.budget = amount * 6/10
-                UserType.TUKANG_SHOPPING -> summary.budget = amount * 3/10
+                UserType.PALING_HEMAT -> summary.budget = amount * 4/10
+                UserType.TUKANG_SHOPPING -> summary.budget = amount * 7/10
             }
 
             summary.income = amount
