@@ -6,6 +6,8 @@ import com.binaracademy.myaccountant.data.room.Transaction
 interface TransactionRepository {
     suspend fun createTransaction(transaction: Transaction)
 
-    fun getAllTransaction(): LiveData<List<Transaction>>
+    fun getAllTransactionFromTo(start: Long, to: Long): LiveData<List<Transaction>>
+
+    fun getAllTransactionHistory(): LiveData<List<Transaction>>
 
 }

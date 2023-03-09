@@ -8,6 +8,7 @@ import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.data.room.SummaryRepositoryImpl
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.data.room.TransactionRepositoryImpl
+import java.util.*
 
 class AllTransactionPresenter(
     private val summaryRepository: SummaryRepository = SummaryRepositoryImpl(),
@@ -50,7 +51,16 @@ class AllTransactionPresenter(
     }
 
     override fun getAllTransactions(): LiveData<List<Transaction>> {
-        return transactionRepository.getAllTransaction()
+        val calendar = Calendar.getInstance()
+        val startOfMonth = calendar.apply { set(Calendar.DAY_OF_MONTH, 1) }.timeInMillis
+        val endOfMonth = calendar.apply {
+            set(
+                Calendar.DAY_OF_MONTH,
+                calendar.getActualMaximum(Calendar.DAY_OF_MONTH)
+            )
+        }.timeInMillis
+
+        return transactionRepository.getAllTransactionFromTo(startOfMonth, endOfMonth)
     }
 
     override suspend fun changeUserSavingType(userType: UserType) {
