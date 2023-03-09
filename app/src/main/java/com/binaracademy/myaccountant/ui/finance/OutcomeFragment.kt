@@ -1,12 +1,12 @@
 package com.binaracademy.myaccountant.ui.finance
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.data.enums.TransactionType
@@ -14,9 +14,9 @@ import com.binaracademy.myaccountant.data.presenter.TransactionContract
 import com.binaracademy.myaccountant.data.presenter.TransactionPresenter
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.databinding.FragmentOutcomeBinding
+import com.binaracademy.myaccountant.util.helpers.formatString
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.util.*
 
 class OutcomeFragment : Fragment(), TransactionContract.View  {
@@ -85,10 +85,7 @@ class OutcomeFragment : Fragment(), TransactionContract.View  {
 			datePicker.show(parentFragmentManager, "DatePicker")
 			datePicker.addOnPositiveButtonClickListener { selected ->
 				calendar.timeInMillis = selected
-				val dateFormat = SimpleDateFormat(
-					"dd MMMM yyyy",
-					Locale("id", "ID")
-				).format(calendar.time)
+				val dateFormat = calendar.time.formatString("dd MMMM yyyy")
 				binding.fiDate.editText?.setText(dateFormat)
 			}
 		}
