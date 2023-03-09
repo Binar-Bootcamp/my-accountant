@@ -22,41 +22,11 @@ class AllTransactionPresenter(
 
     private lateinit var summary: Summary
 
-    // function to update summary when change in income or expense
-    private fun updateSummary(inc: Long = 0L, exp: Long = 0L) {
-        // update local variable to tracking
-        income += inc
-        expense += exp
-
-        // update summary to render in view
-        summary = Summary()
-        summary.type = type
-        summary.income = income
-        when (type) {
-            UserType.LIFE_BALANCE -> {
-                summary.budget = budget - exp
-                summary.budget += inc * 1 / 2
-            }
-            UserType.PALING_HEMAT -> {
-                summary.budget = budget - exp
-                summary.budget += inc * 4 / 10
-            }
-            UserType.TUKANG_SHOPPING -> {
-                summary.budget = budget - exp
-                summary.budget += inc * 7 / 10
-            }
-        }
-
-        summary.expense = expense
-        summary.total = summary.budget - summary.expense
-        getView()?.onUpdatedSummarySuccess(summary)
-    }
-
     // function to update summary when change in type
     private suspend fun updateSummary(type: UserType) {
         summary = Summary()
         when (type) {
-            UserType.LIFE_BALANCE -> summary.budget = income * 1/2
+            UserType.LIFE_BALANCE -> summary.budget = income * 1 / 2
             UserType.PALING_HEMAT -> summary.budget = income * 4 / 10
             UserType.TUKANG_SHOPPING -> summary.budget = income * 7 / 10
         }

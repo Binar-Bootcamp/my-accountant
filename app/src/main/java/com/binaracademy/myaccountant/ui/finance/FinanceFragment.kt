@@ -30,17 +30,37 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
+        binding = FragmentFinanceBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupPresenterAndFetchInitial()
+        setUpRecycleView()
+        setupMenuPopUp()
+        binding.fabAdd.setOnClickListener {
+            binding.root.context.intentTo(AddFinanceActivity::class.java)
+        }
+    }
+
+    override fun onUpdatedSummarySuccess(summary: Summary) {
+        binding.tvIncomeAmount.text = NumberFormatter.formatRupiah(summary.income)
+        binding.tvExpenseAmount.text = NumberFormatter.formatRupiah(summary.expense)
+        binding.tvBudgetAmount.text = NumberFormatter.formatRupiah(summary.budget)
+        binding.tvTotalAmount.text = NumberFormatter.formatRupiah(summary.total)
+    }
+
+    private fun setupPresenterAndFetchInitial() {
+        presenter.setView(this)
         val calendar = Calendar.getInstance()
         val id = "${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)}"
-        binding = FragmentFinanceBinding.inflate(inflater, container, false)
-
-        presenter.setView(this)
         lifecycleScope.launch {
             presenter.initialFetchDataSummary(id)
         }
+    }
 
-        setUpRecycleView()
-
+    private fun setupMenuPopUp() {
         binding.imgType.setOnClickListener { it ->
             val popup = PopupMenu(activity, it)
             popup.inflate(R.menu.popup_menu)
@@ -64,8 +84,6 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
             }
             popup.show()
         }
-
-        return binding.root
     }
 
     private fun setUpRecycleView() {
@@ -74,7 +92,12 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
 
         val adapter = ListTransactionAdapter(arrayListOf())
         presenter.getAllTransactions().observe(viewLifecycleOwner) {
-            adapter.updateTransaction(it)
+            val calendar = Calendar.getInstance()
+            val id = "${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)}"
+            lifecycleScope.launch {
+                presenter.initialFetchDataSummary(id)
+                adapter.updateTransaction(it)
+            }
         }
         adapter.setOnItemClickCallback(object : ListTransactionAdapter.OnItemClickCallback {
             override fun onItemClick(data: Transaction) {
@@ -84,21 +107,5 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.fabAdd.setOnClickListener {
-            binding.root.context.intentTo(AddFinanceActivity::class.java)
-        }
-    }
-
-    override fun onUpdatedSummarySuccess(summary: Summary) {
-        binding.tvIncomeAmount.text = NumberFormatter.formatRupiah(summary.income)
-        binding.tvExpenseAmount.text = NumberFormatter.formatRupiah(summary.expense)
-        binding.tvBudgetAmount.text = NumberFormatter.formatRupiah(summary.budget)
-        binding.tvTotalAmount.text = NumberFormatter.formatRupiah(summary.total)
     }
 }
