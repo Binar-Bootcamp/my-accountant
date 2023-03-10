@@ -44,7 +44,7 @@
             android:name=".ui.counter.CounterActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.detail.DetailHistoryActivity"
+            android:name=".ui.history.detail.DetailHistoryActivity"
             android:exported="false" />
     </application>
 

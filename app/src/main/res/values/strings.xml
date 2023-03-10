@@ -62,6 +62,7 @@
     <string name="history_total">total</string>
     <string name="savings">Savings</string>
     <string name="currency_amount">Rp. %1$d</string>
+    <string name="month_year">%1$s %2$s</string>
     <string name="si_life_balance">Si Life Balance</string>
     <string name="si_hemat">Si Hemat</string>
     <string name="si_shopping">Si Shopping</string>
