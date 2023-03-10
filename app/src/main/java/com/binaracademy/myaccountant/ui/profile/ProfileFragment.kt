@@ -1,16 +1,16 @@
 package com.binaracademy.myaccountant.ui.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.data.presenter.ProfileContract
 import com.binaracademy.myaccountant.data.presenter.ProfilePresenter
 import com.binaracademy.myaccountant.databinding.FragmentProfileBinding
 import com.binaracademy.myaccountant.util.helpers.Global
+import com.binaracademy.myaccountant.util.helpers.NumberFormatter
 import com.binaracademy.myaccountant.util.helpers.SharedPreferencesManager
 import kotlinx.coroutines.launch
 
@@ -46,6 +46,6 @@ class ProfileFragment : Fragment(), ProfileContract.View {
 	}
 
 	override fun onSuccessFetchSaving(amount: Long) {
-		binding.tvSavingProfile.text = resources.getString(R.string.currency_amount, amount)
+		binding.tvSavingProfile.text = NumberFormatter.formatRupiah(amount)
 	}
 }

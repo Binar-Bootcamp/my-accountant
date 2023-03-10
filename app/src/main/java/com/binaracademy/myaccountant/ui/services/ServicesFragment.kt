@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.binaracademy.myaccountant.databinding.FragmentServicesBinding
 import com.binaracademy.myaccountant.ui.counter.CounterActivity
+import com.binaracademy.myaccountant.ui.laundry.LaundryActivity
 
 
 @Suppress("UNREACHABLE_CODE")
@@ -33,6 +34,13 @@ class ServicesFragment : Fragment() {
         binding.cvCounter.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, CounterActivity::class.java)
+                it.startActivity(intent)
+            }
+        }
+
+        binding.cvLaundry.setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, LaundryActivity::class.java)
                 it.startActivity(intent)
             }
         }

@@ -9,10 +9,6 @@ class ProfilePresenter(
 ): ProfileContract.Presenter, BasePresenter<ProfileContract.View>() {
     override suspend fun getTotalSavingUser() {
         val summaries = summaryRepository.findAllSummary()
-        // ini nanti di follow up apakah tipe yang di dapatkan
-        // dari yang terakhir
-        // val last = summaries.first()
-
         val sumOfTotal = summaries.sumOf { s -> s.total }
         val sumOfSaving = summaries.sumOf {
             when (it.type) {
