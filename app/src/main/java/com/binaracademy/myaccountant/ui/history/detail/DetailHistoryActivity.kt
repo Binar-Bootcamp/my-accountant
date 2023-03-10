@@ -1,13 +1,22 @@
 package com.binaracademy.myaccountant.ui.history.detail
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.binaracademy.myaccountant.R
 import com.binaracademy.myaccountant.data.adapter.DetailHistoryAdapter
+import com.binaracademy.myaccountant.data.enums.UserType
 import com.binaracademy.myaccountant.data.presenter.DetailHistoryPresenter
+import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.databinding.ActivityDetailHistoryBinding
+import com.binaracademy.myaccountant.util.helpers.NumberFormatter
+import java.text.DateFormatSymbols
+import java.util.*
+import kotlin.collections.ArrayList
 
 class DetailHistoryActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityDetailHistoryBinding
@@ -16,24 +25,54 @@ class DetailHistoryActivity : AppCompatActivity() {
 	
 	private val presenter = DetailHistoryPresenter()
 	
+	@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = ActivityDetailHistoryBinding.inflate(layoutInflater)
 		setContentView(binding.root)
-		
-		setupRecyclerView()
+
+		val summary = intent.getParcelableExtra("history", Summary::class.java)
+		setupSummaryView(summary)
+		setupRecyclerView(summary)
 	}
-	
-	private fun setupRecyclerView() {
+
+	private fun setupSummaryView(summary: Summary?) {
+		if (summary != null) {
+			val monthYear = summary.id.split("-")
+
+			val monthNames: Array<String> = DateFormatSymbols(Locale("id", "ID")).months
+			val monthName = monthNames[monthYear.first().toInt() - 1]
+			binding.tvMonthYear.text =
+				resources.getString(R.string.month_year, monthName, monthYear[1])
+			val saving = when (summary.type) {
+				UserType.LIFE_BALANCE -> summary.income * 5 / 10
+				UserType.PALING_HEMAT -> summary.income * 6 / 10
+				UserType.TUKANG_SHOPPING -> summary.income * 3 / 10
+			}
+
+			binding.tvSavingAmount.text = NumberFormatter.formatRupiah(saving)
+			binding.tvExpenseAmount.text = NumberFormatter.formatRupiah(summary.expense)
+			binding.tvRemainingBudget.text = NumberFormatter.formatRupiah(summary.total)
+		}
+	}
+
+	private fun setupRecyclerView(summary: Summary?) {
 		list.addAll(emptyList())
 		val layoutManager = LinearLayoutManager(this)
 		recyclerView = binding.rvHistory
 		val adapter = DetailHistoryAdapter(list)
-		presenter.getHistoryTransaction().observe(this){
-			adapter.updateHistory(it)
-		}
 		recyclerView.layoutManager = layoutManager
 		recyclerView.setHasFixedSize(true)
 		recyclerView.adapter = adapter
+
+		val monthYear = summary?.id?.split("-")
+		if (monthYear != null) {
+			presenter.getHistoryTransaction(
+				monthYear.first().toInt(),
+				monthYear[1].toInt()
+			).observe(this){
+				adapter.updateHistory(it)
+			}
+		}
 	}
 }

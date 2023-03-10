@@ -1,5 +1,6 @@
 package com.binaracademy.myaccountant.ui.history
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -10,7 +11,6 @@ import com.binaracademy.myaccountant.data.presenter.HistoryPresenter
 import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.databinding.FragmentHistoryBinding
 import com.binaracademy.myaccountant.ui.history.detail.DetailHistoryActivity
-import com.binaracademy.myaccountant.util.helpers.intentTo
 
 class HistoryFragment : Fragment(), HistoryContract.View {
 	private lateinit var binding: FragmentHistoryBinding
@@ -46,7 +46,9 @@ class HistoryFragment : Fragment(), HistoryContract.View {
 		
 		adapter.setOnItemClickCallback(object : HistoryAdapter.OnItemClickCallback {
 			override fun onItemClick(data: Summary) {
-				binding.root.context.intentTo(DetailHistoryActivity::class.java)
+				val intent = Intent(context, DetailHistoryActivity::class.java)
+				intent.putExtra("history", data)
+				startActivity(intent)
 			}
 		})
 	}
