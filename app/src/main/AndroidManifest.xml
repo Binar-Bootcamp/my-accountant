@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".MyAccountantApp"
         android:allowBackup="true"
@@ -14,7 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAccountant"
         tools:targetApi="31">
-
         <activity
             android:name=".ui.splashscreen.SplashScreenActivity"
             android:exported="true">
@@ -27,29 +24,30 @@
         <activity
             android:name=".ui.landing.LandingActivity"
             android:exported="false" />
-
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".ui.register.RegisterActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".ui.income.IncomeActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".ui.main.MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:windowSoftInputMode="adjustResize"
             android:name=".ui.finance.AddFinanceActivity"
-            android:exported="false" />
-
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ui.counter.CounterActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.detail.DetailHistoryActivity"
+            android:exported="false" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

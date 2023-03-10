@@ -20,6 +20,8 @@ class HistoryAdapter(
 	private val historyContext: Context
 ) :
 	RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
+	
+	private lateinit var onItemClickCallback: OnItemClickCallback
 
 	override fun onCreateViewHolder(parent : ViewGroup , viewType : Int) : HistoryViewHolder {
 		val view = ChildHistoryBinding.inflate(LayoutInflater.from(parent.context) , parent , false)
@@ -35,6 +37,7 @@ class HistoryAdapter(
 		holder.grandTotal.text = NumberFormatter.formatRupiah(transaction.amount)
 		holder.totall.text =  NumberFormatter.formatRupiah(transaction.amount)
 		holder.bulan.text = transaction.createdAt.formatString("MMMM yyyy")
+		holder.itemView.setOnClickListener { onItemClickCallback.onItemClick(listTransaction[holder.adapterPosition]) }
 	}
 
 	@SuppressLint("NotifyDataSetChanged")
@@ -42,6 +45,14 @@ class HistoryAdapter(
 		this.listTransaction.clear()
 		this.listTransaction.addAll(transactions)
 		notifyDataSetChanged()
+	}
+	
+	fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+		this.onItemClickCallback = onItemClickCallback
+	}
+	
+	interface OnItemClickCallback {
+		fun onItemClick(data: Transaction)
 	}
 
 	inner class HistoryViewHolder(val binding : ChildHistoryBinding) :
