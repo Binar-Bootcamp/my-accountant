@@ -70,8 +70,6 @@ class AdapterItem : RecyclerView1.Adapter<AdapterItem.HolderItem> , Filterable {
 			imgCounter = binding.imageCounter
 			tvNama = binding.textViewTitle
 			Tvloc = binding.textLocation
-			
-			
 		}
 	}
 	
