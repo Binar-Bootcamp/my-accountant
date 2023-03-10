@@ -32,7 +32,6 @@ class AdapterItem : RecyclerView1.Adapter<AdapterItem.HolderItem> , Filterable {
 	private lateinit var binding : CounterChildBinding
 	
 	override fun onCreateViewHolder(parent : ViewGroup , viewType : Int) : HolderItem {
-		
 		val view =
 			LayoutInflater.from(parent.context).inflate(R.layout.counter_child , parent , false)
 		val binding = CounterChildBinding.bind(view)
