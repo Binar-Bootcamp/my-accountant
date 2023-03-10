@@ -3,6 +3,7 @@ package com.binaracademy.myaccountant.ui.finance
 import android.app.Activity
 import android.graphics.Color
 import android.os.Bundle
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
