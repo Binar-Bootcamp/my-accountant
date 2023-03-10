@@ -30,10 +30,14 @@
     <string name="total">Total</string>
     <string name="card">Card</string>
     <string name="tv_nearest_counter">Nearest Counter</string>
+    <string name="tv_nearest_laundry">Nearest Laundry</string>
     <string name="nama_counter">Nama</string>
+    <string name="nama_laundry">Nama Laundry</string>
     <string name="counter_location">Location</string>
+    <string name="laundry_location">Location Laundry</string>
     <string name="pilih_harga">Pilih harga</string>
     <string name="harga">INR 56990</string>
+    <string name="laundry_price">Rp 5000</string>
     <string name="search">Search</string>
     <string name="todo">TODO</string>
     <string name="next">Next</string>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.laundry.LaundryActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_laundry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="15dp"
+        app:navigationIcon="@drawable/baseline_arrow_back_24"
+        app:title="Laundry"
+        app:titleTextColor="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/rl_laundry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:padding="5dp"
+        tools:ignore="UseCompoundDrawables">
+
+        <TextView
+            android:id="@+id/rl_text"
+            android:layout_width="162dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/fontbold"
+            android:text="@string/tv_nearest_laundry"
+            android:textColor="@color/black"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/sortby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="240dp"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_spinner_new"/>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_laundry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/laundry_list"/>
+
+</LinearLayout>

@@ -1,6 +1,9 @@
 package com.binaracademy.myaccountant.ui.register
 
+import android.app.AlertDialog
+import android.content.Context
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.binaracademy.myaccountant.R
@@ -38,6 +41,20 @@ class RegisterActivity : AppCompatActivity() {
 				sharedPreferences.putString(type, saving)
 				intentTo(IncomeActivity::class.java)
 			}
+
+			btnInfo.setOnClickListener {
+				customDialog(binding.root)
+			}
+		}
+	}
+
+	private fun customDialog(viewGroup: ViewGroup){
+		val builder = AlertDialog.Builder(this)
+		val inflater = layoutInflater
+		val dialogLayout = inflater.inflate(R.layout.info_dialog, viewGroup)
+
+		with(builder){
+			setView(dialogLayout)
 		}
 	}
 }
