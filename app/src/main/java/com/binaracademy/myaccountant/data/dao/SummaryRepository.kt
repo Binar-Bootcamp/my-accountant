@@ -9,7 +9,7 @@ interface SummaryRepository {
 
     suspend fun findSummaryById(id: String): Summary
 
-    fun findAllSummary(): List<Summary>
+    suspend fun findAllSummary(): List<Summary>
 
     fun findAllLiveDataSummary(): LiveData<List<Summary>>
 

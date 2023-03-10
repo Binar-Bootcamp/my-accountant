@@ -6,7 +6,7 @@ import com.binaracademy.myaccountant.data.room.Transaction
 interface DetailHistoryContract {
 
     interface Presenter {
-        fun getHistoryTransaction(): LiveData<List<Transaction>>
+        fun getHistoryTransaction(month: Int, year: Int): LiveData<List<Transaction>>
     }
 
     interface View

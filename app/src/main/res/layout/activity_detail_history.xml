@@ -45,6 +45,7 @@
         android:layout_marginHorizontal="16dp"/>
 
     <TextView
+        android:id="@+id/tv_month_year"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fontbold"
@@ -94,6 +95,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tv_saving_amount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -121,6 +123,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tv_expense_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/textview_rounded_red"
@@ -147,6 +150,7 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tv_remaining_budget"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/fontbold"

@@ -22,8 +22,11 @@ class SummaryRepositoryImpl : SummaryRepository {
         }
     }
 
-    override  fun findAllSummary(): List<Summary> {
-        return summaryDao.getAllSummary()
+    override suspend fun findAllSummary(): List<Summary> {
+        return withContext(Dispatchers.IO) {
+           summaryDao.getAllSummary()
+        }
+
     }
 
     override fun findAllLiveDataSummary(): LiveData<List<Summary>> {
