@@ -102,11 +102,6 @@ class FinanceFragment : Fragment(), AllTransactionContract.View {
                 adapter.updateTransaction(it)
             }
         }
-        adapter.setOnItemClickCallback(object : ListTransactionAdapter.OnItemClickCallback {
-            override fun onItemClick(data: Transaction) {
-
-            }
-        })
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter

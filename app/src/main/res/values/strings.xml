@@ -66,9 +66,15 @@
     <string name="history_total">total</string>
     <string name="savings">Savings</string>
     <string name="currency_amount">Rp. %1$d</string>
+    <string name="month_year">%1$s %2$s</string>
     <string name="si_life_balance">Si Life Balance</string>
     <string name="si_hemat">Si Hemat</string>
     <string name="si_shopping">Si Shopping</string>
+    <string name="detail_history">Detail History</string>
+    <string name="saving">Saving</string>
+    <string name="total_expense">Total Expense</string>
+    <string name="rp_400_000">-Rp.400.000</string>
+    <string name="remaining_budget">Remaining budget</string>
     <string-array name="spinner_item">
         <item> </item>
         <item>Array Item One</item>
