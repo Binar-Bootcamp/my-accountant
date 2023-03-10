@@ -1,9 +1,9 @@
 package com.binaracademy.myaccountant.ui.register
 
 import android.app.AlertDialog
-import android.app.Activity
 import android.os.Bundle
 import android.view.ViewGroup
+import android.app.Activity
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
@@ -46,6 +46,7 @@ class RegisterActivity : AppCompatActivity() {
 			btnInfo.setOnClickListener {
 				customDialog(binding.root)
 			}
+
 			root.setOnClickListener {
 				hideSoftKeyboard(this@RegisterActivity)
 			}
@@ -60,12 +61,12 @@ class RegisterActivity : AppCompatActivity() {
 		with(builder){
 			setView(dialogLayout)
 		}
-
+		
 		binding.root.setOnClickListener {
 			hideSoftKeyboard(this)
 		}
 	}
-
+	
 	private fun hideSoftKeyboard(activity: Activity) {
 		val inputMethodManager = activity.getSystemService(
 			INPUT_METHOD_SERVICE
