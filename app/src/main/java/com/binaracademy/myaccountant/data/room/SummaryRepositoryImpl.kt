@@ -1,5 +1,6 @@
 package com.binaracademy.myaccountant.data.room
 
+import androidx.lifecycle.LiveData
 import com.binaracademy.myaccountant.MyAccountantApp
 import com.binaracademy.myaccountant.data.dao.SummaryDao
 import com.binaracademy.myaccountant.data.dao.SummaryRepository
@@ -21,10 +22,11 @@ class SummaryRepositoryImpl : SummaryRepository {
         }
     }
 
-    override suspend fun findAllSummary(): List<Summary> {
-        return withContext(Dispatchers.IO) {
-            summaryDao.getAllSummary()
-        }
+    override  fun findAllSummary(): List<Summary> {
+        return summaryDao.getAllSummary()
     }
 
+    override fun findAllLiveDataSummary(): LiveData<List<Summary>> {
+        return summaryDao.getLiveDataAllSummary()
+    }
 }

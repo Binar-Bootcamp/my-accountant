@@ -1,4 +1,4 @@
-package com.binaracademy.myaccountant.ui.detail
+package com.binaracademy.myaccountant.ui.history.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

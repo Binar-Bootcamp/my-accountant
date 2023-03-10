@@ -7,17 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.data.presenter.HistoryContract
 import com.binaracademy.myaccountant.data.presenter.HistoryPresenter
-import com.binaracademy.myaccountant.data.room.Transaction
+import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.databinding.FragmentHistoryBinding
-import com.binaracademy.myaccountant.ui.detail.DetailHistoryActivity
+import com.binaracademy.myaccountant.ui.history.detail.DetailHistoryActivity
 import com.binaracademy.myaccountant.util.helpers.intentTo
-
 
 class HistoryFragment : Fragment(), HistoryContract.View {
 	private lateinit var binding: FragmentHistoryBinding
 	private lateinit var recyclerView: RecyclerView
 	private val presenter = HistoryPresenter()
-	private var list: ArrayList<Transaction> = arrayListOf()
+	private var list: ArrayList<Summary> = arrayListOf()
 
 	override fun onCreateView(
 		inflater: LayoutInflater, container: ViewGroup?,
@@ -46,7 +45,7 @@ class HistoryFragment : Fragment(), HistoryContract.View {
 		recyclerView.adapter = adapter
 		
 		adapter.setOnItemClickCallback(object : HistoryAdapter.OnItemClickCallback {
-			override fun onItemClick(data: Transaction) {
+			override fun onItemClick(data: Summary) {
 				binding.root.context.intentTo(DetailHistoryActivity::class.java)
 			}
 		})

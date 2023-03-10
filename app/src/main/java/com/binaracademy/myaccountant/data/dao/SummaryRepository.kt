@@ -1,5 +1,6 @@
 package com.binaracademy.myaccountant.data.dao
 
+import androidx.lifecycle.LiveData
 import com.binaracademy.myaccountant.data.room.Summary
 
 interface SummaryRepository {
@@ -8,6 +9,8 @@ interface SummaryRepository {
 
     suspend fun findSummaryById(id: String): Summary
 
-    suspend fun findAllSummary(): List<Summary>
+    fun findAllSummary(): List<Summary>
+
+    fun findAllLiveDataSummary(): LiveData<List<Summary>>
 
 }

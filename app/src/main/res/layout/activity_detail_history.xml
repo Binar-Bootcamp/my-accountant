@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.detail.DetailHistoryActivity">
+    tools:context=".ui.history.detail.DetailHistoryActivity">
 
     <!-- Header-->
     <LinearLayout
