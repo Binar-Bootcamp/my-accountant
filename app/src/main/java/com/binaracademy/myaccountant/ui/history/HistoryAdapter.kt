@@ -39,7 +39,7 @@ class HistoryAdapter(
         val monthYear = summary.id.split("-")
 
         val monthNames: Array<String> = DateFormatSymbols(Locale("id", "ID")).months
-        val monthName = monthNames[monthYear.first().toInt() - 1]
+        val monthName = monthNames[monthYear.first().toInt()]
 
         holder.bulan.text = historyContext.getString(R.string.month_year, monthName, monthYear[1])
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClick(summaries[holder.adapterPosition]) }
