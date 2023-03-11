@@ -14,7 +14,7 @@ interface SummaryDao {
     fun insertSummary(summary: Summary)
 
     @Query("SELECT * FROM summary WHERE id = :id LIMIT 1")
-    fun findById(id: String): Summary
+    fun findById(id: String): Summary?
 
     @Query("SELECT * FROM summary ORDER BY id DESC")
     fun getLiveDataAllSummary(): LiveData<List<Summary>>

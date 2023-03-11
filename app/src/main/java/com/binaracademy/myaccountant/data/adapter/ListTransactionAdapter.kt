@@ -20,8 +20,6 @@ import com.bumptech.glide.request.RequestOptions
 class ListTransactionAdapter(private val listTransaction: ArrayList<Transaction>) :
     RecyclerView.Adapter<ListTransactionAdapter.ListViewHolder>() {
 
-    private lateinit var onItemClickCallback: OnItemClickCallback
-
     @SuppressLint("NotifyDataSetChanged")
     fun updateTransaction(transactions: List<Transaction>) {
         this.listTransaction.clear()
@@ -67,19 +65,10 @@ class ListTransactionAdapter(private val listTransaction: ArrayList<Transaction>
         holder.tvDescriptions.text = transaction.description
         holder.tvDate.text = transaction.createdAt.formatString("d MMMM yyyy")
         holder.tvAmount.text = NumberFormatter.formatRupiah(transaction.amount)
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClick(listTransaction[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
         return listTransaction.size
-    }
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
-        this.onItemClickCallback = onItemClickCallback
-    }
-
-    interface OnItemClickCallback {
-        fun onItemClick(data: Transaction)
     }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
