@@ -9,7 +9,6 @@ class ProfilePresenter(
 ): ProfileContract.Presenter, BasePresenter<ProfileContract.View>() {
     override suspend fun getTotalSavingUser() {
         val summaries = summaryRepository.findAllSummary()
-        val sumOfTotal = summaries.sumOf { s -> s.total }
         val sumOfSaving = summaries.sumOf {
             when (it.type) {
                 UserType.LIFE_BALANCE -> it.income * 5 / 10
@@ -18,6 +17,6 @@ class ProfilePresenter(
             }
         }
 
-        getView()?.onSuccessFetchSaving(sumOfSaving + sumOfTotal)
+        getView()?.onSuccessFetchSaving(sumOfSaving)
     }
 }

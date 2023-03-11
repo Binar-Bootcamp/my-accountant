@@ -7,7 +7,7 @@ interface SummaryRepository {
 
     suspend fun createSummary(summary: Summary)
 
-    suspend fun findSummaryById(id: String): Summary
+    suspend fun findSummaryById(id: String): Summary?
 
     suspend fun findAllSummary(): List<Summary>
 

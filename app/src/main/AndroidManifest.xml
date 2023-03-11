@@ -46,6 +46,9 @@
         <activity
             android:name=".ui.history.detail.DetailHistoryActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.laundry.LaundryActivity"
+            android:exported="false" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

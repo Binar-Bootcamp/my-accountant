@@ -1,9 +1,7 @@
 package com.binaracademy.myaccountant.ui.history.detail
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.binaracademy.myaccountant.R
@@ -16,7 +14,6 @@ import com.binaracademy.myaccountant.databinding.ActivityDetailHistoryBinding
 import com.binaracademy.myaccountant.util.helpers.NumberFormatter
 import java.text.DateFormatSymbols
 import java.util.*
-import kotlin.collections.ArrayList
 
 class DetailHistoryActivity : AppCompatActivity() {
 	private lateinit var binding: ActivityDetailHistoryBinding
@@ -24,14 +21,14 @@ class DetailHistoryActivity : AppCompatActivity() {
 	private var list: ArrayList<Transaction> = arrayListOf()
 	
 	private val presenter = DetailHistoryPresenter()
-	
-	@RequiresApi(Build.VERSION_CODES.TIRAMISU)
+
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
 		binding = ActivityDetailHistoryBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
-		val summary = intent.getParcelableExtra("history", Summary::class.java)
+		val summary: Summary? = intent.getParcelableExtra("history")
+		binding.imgBack.setOnClickListener { finish() }
 		setupSummaryView(summary)
 		setupRecyclerView(summary)
 	}
@@ -41,7 +38,7 @@ class DetailHistoryActivity : AppCompatActivity() {
 			val monthYear = summary.id.split("-")
 
 			val monthNames: Array<String> = DateFormatSymbols(Locale("id", "ID")).months
-			val monthName = monthNames[monthYear.first().toInt() - 1]
+			val monthName = monthNames[monthYear.first().toInt()]
 			binding.tvMonthYear.text =
 				resources.getString(R.string.month_year, monthName, monthYear[1])
 			val saving = when (summary.type) {

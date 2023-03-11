@@ -16,7 +16,7 @@ class SummaryRepositoryImpl : SummaryRepository {
         }
     }
 
-    override suspend fun findSummaryById(id: String): Summary {
+    override suspend fun findSummaryById(id: String): Summary? {
         return withContext(Dispatchers.IO) {
             summaryDao.findById(id)
         }

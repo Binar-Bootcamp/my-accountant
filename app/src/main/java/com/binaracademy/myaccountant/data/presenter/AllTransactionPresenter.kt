@@ -41,7 +41,7 @@ class AllTransactionPresenter(
     }
 
     override suspend fun initialFetchDataSummary(id: String) {
-        summary = summaryRepository.findSummaryById(id)
+        summary = summaryRepository.findSummaryById(id) ?: Summary()
         type = summary.type
         income = summary.income
         expense = summary.expense

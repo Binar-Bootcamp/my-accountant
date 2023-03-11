@@ -1,9 +1,11 @@
 package com.binaracademy.myaccountant.data.presenter
 
+import android.util.Log
 import com.binaracademy.myaccountant.data.dao.SummaryRepository
 import com.binaracademy.myaccountant.data.dao.TransactionRepository
 import com.binaracademy.myaccountant.data.enums.TransactionType
 import com.binaracademy.myaccountant.data.enums.UserType
+import com.binaracademy.myaccountant.data.room.Summary
 import com.binaracademy.myaccountant.data.room.SummaryRepositoryImpl
 import com.binaracademy.myaccountant.data.room.Transaction
 import com.binaracademy.myaccountant.data.room.TransactionRepositoryImpl
@@ -18,8 +20,10 @@ class TransactionPresenter(
             transactionRepository.createTransaction(transaction)
 
             val calendar = Calendar.getInstance()
+            calendar.time = transaction.createdAt
             val id = "${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)}"
-            val summary = summaryRepository.findSummaryById(id)
+            val summary = summaryRepository.findSummaryById(id) ?: Summary()
+            summary.id = id
             when (transaction.type) {
                 TransactionType.INCOME -> {
                     summary.income += transaction.amount
@@ -45,6 +49,7 @@ class TransactionPresenter(
             summaryRepository.createSummary(summary)
             getView()?.onSaveTransactionSuccess()
         } catch (e: Exception) {
+            Log.e("TransactionPresenter", "saveTransaction: error occurred {}", e)
             getView()?.onSaveTransactionFailure(e.message.toString())
         }
     }
